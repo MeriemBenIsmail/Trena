@@ -10,11 +10,11 @@ import { Line } from "../../../UI/line/Line";
 export const SignInForm = (props) => {
   const validate = Yup.object({
     email: Yup.string()
-      .email("Email is invalid !")
-      .required("Email is required !"),
+      .email("Email Invalid !")
+      .required("Email Obligatoire !"),
     password: Yup.string()
-      .required("Password is required !")
-      .min(8, "Password must be at least 8 charaters !"),
+      .required("Mot De Passe Obligatoire !")
+      .min(8, "Mot de passe doit avoir au minimum 8 characters !"),
   });
 
   return (
