@@ -1,0 +1,60 @@
+.signUpForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signUpForm .header {
+    font-size: 30px;
+    font-weight: 600;
+    color: #005236;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    
+}
+.signUpForm .header h2 {
+    margin-bottom: 20px;
+}
+
+.headerIcon {
+    margin-right: 25px;
+    margin-top: 8px;
+}
+
+.submit {
+    margin-top: 0px;
+}
+
+.submit h5 {
+    text-align: center;
+}
+
+.signUpForm .note {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 8px;
+    color: #A5A5A5;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.signUpForm .note:hover {
+    color: #005236;
+}
+.social {
+    margin: 23px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.social .note {
+    
+}
