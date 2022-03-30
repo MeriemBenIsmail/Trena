@@ -6,6 +6,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { SocialMediaBox } from "../../../UI/SocialMediaBox/SocialMediaBox";
 import { Line } from "../../../UI/line/Line";
+import { Circle } from "../../../UI/circle/Circle";
 
 export const SignInForm = (props) => {
   const validate = Yup.object({
@@ -32,6 +33,12 @@ export const SignInForm = (props) => {
       {(formik) => (
         <div className={classes.signInForm}>
           <div className={classes.header}>
+            <div className={classes.circleContainer}>
+              <Circle color="#6BC4A6" width="26px" height="26px" />
+              <Circle color="#6BC4A6" width="32px" height="32px" />
+              <Circle color="#005236" width="40px" height="40px" />
+            </div>
+            
             <h2 className={classes.title}>Connectez-Vous</h2>
             <Line />
           </div>

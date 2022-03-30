@@ -3,7 +3,7 @@ import { SignInForm } from "../SignInForm/SignInForm";
 import { useState } from "react";
 import {SignUpForm} from '../SignUpForm/SignUpForm';
 import { ToggleBox } from "./ToggleBox";
-
+import wave from '../../../assets/wave.svg';
 
 const FormSection = (props) => {
 
@@ -21,6 +21,7 @@ const FormSection = (props) => {
     
   return (
     <div className={classes.formSection}>
+      <img src={wave} alt="" />
     
       <div className={classes.formContainer}>
       

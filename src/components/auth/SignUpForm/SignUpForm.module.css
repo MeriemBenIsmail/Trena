@@ -55,6 +55,9 @@
     align-items: center;
 
 }
-.social .note {
-    
+.circleContainer {
+    position: absolute;
+    right: 0;
+    transform: rotate(50deg);
+  margin-right: 50px;
 }
