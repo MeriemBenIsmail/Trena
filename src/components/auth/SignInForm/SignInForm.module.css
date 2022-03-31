@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 5px 20px 0 0;
 }
 
 .signInForm .header {
@@ -48,4 +49,10 @@
 }
 .social {
     margin: 23px;
+}
+.circleContainer {
+    position: absolute;
+    right: 0;
+    transform: rotate(50deg);
+  margin-right: 50px;
 }
