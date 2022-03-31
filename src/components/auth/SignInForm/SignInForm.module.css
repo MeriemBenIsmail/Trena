@@ -45,7 +45,7 @@
 }
 
 .signInForm .note:hover {
-    color: #005236;
+    color: #6BC4A6;
 }
 .social {
     margin: 23px;
@@ -55,4 +55,11 @@
     right: 0;
     transform: rotate(50deg);
   margin-right: 50px;
+}
+
+@media screen and (max-width:1188px) {
+   .signInForm .header {
+        font-size: 25px;
+    }
+    
 }

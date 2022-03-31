@@ -77,7 +77,8 @@ input.formControl:focus {
     font-weight: 500;
     font-size: 13px;
     line-height: 12px;
-    margin: 12px 0 6px 0;
+    margin: 5px 0 4px 0;
     display: block;
     height: 18px;
+
 }
