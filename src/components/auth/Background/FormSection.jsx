@@ -5,8 +5,10 @@ import {SignUpForm} from '../SignUpForm/SignUpForm';
 import { ToggleBox } from "./ToggleBox";
 import wave from '../../../assets/wave.svg';
 
-const FormSection = (props) => {
 
+const FormSection = (props) => {
+    
+    
     const text = ["Vous Etes Nouveau ? Rejoignez-Nous !","Déjà Membre ? Connectez-Vous !"]
     const [isClicked,setIsClicked] = useState(false);
     const [note,setNote] = useState(text[0]);

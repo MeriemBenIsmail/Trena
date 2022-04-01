@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef,useState } from "react";
 import classes from "./SignInForm.module.css";
 import { Button } from "../../../UI/button/Button";
 import { TextField } from "../TextField";
@@ -7,8 +7,23 @@ import * as Yup from "yup";
 import { SocialMediaBox } from "../../../UI/SocialMediaBox/SocialMediaBox";
 import { Line } from "../../../UI/line/Line";
 import { Circle } from "../../../UI/circle/Circle";
+import { useUserContext } from "../../../contexts/userContext";
 
 export const SignInForm = (props) => {
+  
+  const [email,setEmail]= useState('');
+  const {forgoPassword,signInUser} = useUserContext();
+  const forgotPasswordHandler = () => {
+   /* const email = emailRef.current.value;
+    if (email)
+    forgoPassword(email).then(() => {
+        emailRef.current.value = "";
+      });*/
+      
+
+
+      console.log(email);
+  };
   const validate = Yup.object({
     email: Yup.string()
       .email("Email Invalid !")
@@ -17,7 +32,7 @@ export const SignInForm = (props) => {
       .required("Mot De Passe Obligatoire !")
       .min(8, "Mot de passe doit avoir au minimum 8 characters !"),
   });
-
+ 
   return (
     <Formik
       initialValues={{
@@ -26,9 +41,10 @@ export const SignInForm = (props) => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
-        props.onSubmitForm();
-        console.log(values);
+       console.log(values);
+       signInUser(values.email,values.password);
       }}
+      
     >
       {(formik) => (
         <div className={classes.signInForm}>
@@ -44,7 +60,7 @@ export const SignInForm = (props) => {
           </div>
           <div className={classes.form}>
             <Form>
-              <TextField label="Email" name="email" type="email" />
+              <TextField label="Email" name="email" type="email"  />
               <TextField label="Mot De Passe" name="password" type="password" />
               <div className={classes.submit}>
                 <Button color="#005236" content="Se Connecter" type="submit" />
@@ -54,7 +70,7 @@ export const SignInForm = (props) => {
                  
                   <SocialMediaBox />
               </div>
-              <h5 className={classes.note}>Mot De Passe Oublié ?</h5>
+              <h5 className={classes.note} onClick={forgotPasswordHandler} >Mot De Passe Oublié ?</h5>
               
             </Form>
           </div>

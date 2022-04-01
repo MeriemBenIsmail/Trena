@@ -7,7 +7,10 @@ import * as Yup from "yup";
 import { SocialMediaBox } from "../../../UI/SocialMediaBox/SocialMediaBox";
 import { Line } from "../../../UI/line/Line";
 import { Circle } from "../../../UI/circle/Circle";
+import { useUserContext } from "../../../contexts/userContext";
+
 export const SignUpForm = (props) => {
+  const { registerUser } = useUserContext();
   const validate = Yup.object({
     email: Yup.string()
       .email("Email is invalid !")
@@ -25,8 +28,7 @@ export const SignUpForm = (props) => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
-        props.onSubmitForm();
-        console.log(values);
+        registerUser(values.email,values.password);
       }}
     >
       {(formik) => (
@@ -45,7 +47,7 @@ export const SignUpForm = (props) => {
               <TextField label="Email" name="email" type="email" />
               <TextField label="Mot De Passe" name="password" type="password" />
               <div className={classes.submit}>
-                <Button color="#005236" content="Se Connecter" type="submit" />
+                <Button color="#005236" content="S'inscrire" type="submit" />
                 
               </div>
               <div className={classes.social}>
