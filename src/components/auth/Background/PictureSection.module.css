@@ -9,14 +9,26 @@
     
 }
 .picture {
-    display: flex;
+  
    
     width: 100%;
-    
 }
-
+.startBtn {
+ position: absolute;
+   bottom: 50px;
+   margin-left: 30%;
+   display: none;
+}
 @keyframes backAn {
     0%   { background-position:0% 100%; }
     50%   { background-position:100% 100%; }
     100%   { background-position:0% 100%; }
+ }
+
+ @media screen and (max-width:1000px) {
+
+    .startBtn {
+        display: block;
+    }
+     
  }
