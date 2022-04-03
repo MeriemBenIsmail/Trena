@@ -10,16 +10,17 @@ import { StepOne } from "./Step1";
 import { StepTwo } from "./Step2";
 import { useUserContext } from "../../../contexts/userContext";
 export const SignUpForm = (props) => {
-  const { registerUser, signInWithGoogle } = useUserContext();
+  const { registerUser, signInWithGoogle,errorSignUp } = useUserContext();
 
   const validate = Yup.object({
     email: Yup.string()
       .email("Email invalid !")
       .required("Email obligatoire !"),
     password: Yup.string()
-      .required("PMot de passe obligatoire !")
+      .required("Mot de passe obligatoire !")
       .min(8, " !")
-      .matches(/^(?=.*[A-Z])/, "Doit contenir au moins 8 characters et 1 lettre majuscule"),
+      .matches(/^(?=.*[A-Z])/, "Doit contenir au moins 8 characters et 1 lettre majuscule")
+     
   });
   const [next, setNext] = useState(1);
   const nextHandler = () => {
@@ -75,7 +76,7 @@ export const SignUpForm = (props) => {
                  
                   <Form>
                     <div className={classes.formContent}>
-                      <button className={classes.arrowLeft} onClick={previousHandler}>
+                      <button className={classes.arrowLeft} onClick={previousHandler} disabled type="button">
                       <svg width="60px" height="80px" viewBox="0 0 50 80" >
                         <polyline fill="none" stroke="#005236" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
                       45.63,75.8 0.375,38.087 45.63,0.375 "/>
@@ -89,6 +90,7 @@ export const SignUpForm = (props) => {
                         </svg>
                       </button>
                     </div>
+                    
                     
                     
                   </Form>
@@ -118,6 +120,9 @@ export const SignUpForm = (props) => {
                
              
           </div>
+          {errorSignUp && <div className={classes.signuperror}>
+                  Email déjà utilisé !
+              </div>}
         </div>
       )}
     </Formik>

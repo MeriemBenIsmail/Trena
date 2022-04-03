@@ -5,20 +5,25 @@ import {SignUpForm} from '../SignUpForm/SignUpForm';
 import { ToggleBox } from "./ToggleBox";
 import wave from '../../../assets/wave.svg';
 import Popup from "../../../UI/popup/Popup";
-
+import {  useNavigate } from "react-router-dom";
 
 const FormSection = (props) => {
     
     const [showPopup,setShowPopup] = useState(false);
     const text = ["Vous Etes Nouveau ? Rejoignez-Nous !","Déjà Membre ? Connectez-Vous !"]
-    const [isClicked,setIsClicked] = useState(false);
+    const [isClicked,setIsClicked] = useState(props.auth);
     const [note,setNote] = useState(text[0]);
-    const [form,setForm] = useState("SignInForm");
-
+   
+    const navigate =  useNavigate();
     const handleClick = () => {
         setIsClicked(!isClicked);
         note === text[0] ? setNote(text[1]) : setNote(text[0]);
-        form === "SignInForm" ? setForm("SignUpForm") : setForm("SignInForm");
+       
+        if (isClicked) {
+          navigate("/login");
+        } else {
+          navigate("/signup");
+        }
     }
 
     const popupTimeOut = () => {
@@ -34,7 +39,7 @@ const FormSection = (props) => {
     
       <div className={classes.formContainer}>
       
-          { form === "SignInForm" ? 
+          { isClicked === false ? 
             <div>
                <SignInForm closePopup={popupTimeOut} onSubmitForm={props.onSubmitForm} showPopup={showPopup} setShowPopup={setShowPopup} /> 
             </div> : <SignUpForm  onSubmitForm={props.onSubmitForm} submitted={props.submitted} />}

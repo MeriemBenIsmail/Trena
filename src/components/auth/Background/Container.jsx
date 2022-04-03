@@ -4,7 +4,7 @@ import {PictureSection} from './PictureSection'
 import FormSection from './FormSection';
 import wavyLine from '../../../assets/wavyLine.svg';
 import { useState } from 'react';
-export const Container = () => {
+export const Container = (props) => {
   
 
   const [submitted, setSubmitted] = useState(false);
@@ -24,7 +24,7 @@ export const Container = () => {
             </div>
             
             <div className={classes.formSection}>
-                <FormSection onSubmitForm={onSubmitForm} submitted={submitted} /> 
+                <FormSection auth={props.auth} onSubmitForm={onSubmitForm} submitted={submitted} /> 
             </div>
         </div>
 
