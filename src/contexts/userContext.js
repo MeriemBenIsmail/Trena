@@ -1,13 +1,18 @@
 import { createContext, useContext, useState } from "react";
 import {
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
   updateProfile,
   sendPasswordResetEmail,
+  signInWithPopup
 } from "firebase/auth";
-import { auth } from "../firebase";
+
+import { auth, db } from "../firebase";
+import {
+  query , getDocs, collection, where, addDoc} from 'firebase/firestore'
 
 export const UserContext = createContext({});
 
@@ -62,6 +67,26 @@ export const UserContextProvider = ({ children }) => {
   const forgotPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
   };
+  const googleProvider = new GoogleAuthProvider();
+const signInWithGoogle = async () => {
+  try {
+    const res = await signInWithPopup(auth, googleProvider);
+    const user = res.user;
+    const q = query(collection(db, "users"), where("uid", "==", user.uid));
+    const docs = await getDocs(q);
+    if (docs.docs.length === 0) {
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
+        name: user.displayName,
+        authProvider: "google",
+        email: user.email,
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
 
   const contextValue = {
     user,
@@ -71,6 +96,7 @@ export const UserContextProvider = ({ children }) => {
     registerUser,
     logoutUser,
     forgotPassword,
+    signInWithGoogle,
   };
   return (
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>

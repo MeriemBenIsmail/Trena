@@ -44,14 +44,16 @@ export const TextField = ({ label, ...props }) => {
    } 
   
  }
- 
-  return (
+ const handleChange = (e) => {
+        props.emailchange(e.target.value)
+ } 
+   return (
     <div className={classes.inputBox}>
       <label htmlFor={field.name} style={{color:labelColor}}>{label}</label>
       {getStyle()}
       <div className={classes.input} style={style} >
         
-        <input onFocus={changeColor} onBlur={resetColor}
+        <input onFocus={changeColor} onBlur={resetColor} onInput={handleChange}
           className={classes.formControl}
           {...field} {...props} 
           autoComplete="off" style={isFocus && !meta.touched && !meta.error ?  {borderTop:border,borderBottom:border} : styleErrorInput } type={passVisible && props.type === "password" ? "text" : props.type }
