@@ -8,7 +8,10 @@ import { Circle } from "../../../UI/circle/Circle";
 import { useState } from "react";
 import { StepOne } from "./Step1";
 import { StepTwo } from "./Step2";
+import { useUserContext } from "../../../contexts/userContext";
 export const SignUpForm = (props) => {
+  const { registerUser, signInWithGoogle } = useUserContext();
+
   const validate = Yup.object({
     email: Yup.string()
       .email("Email invalid !")
@@ -20,6 +23,7 @@ export const SignUpForm = (props) => {
   });
   const [next, setNext] = useState(1);
   const nextHandler = () => {
+
     if (next === 1) {
       setNext(2);
     } else if (next === 2) {
@@ -41,8 +45,8 @@ export const SignUpForm = (props) => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
-        props.onSubmitForm();
-        console.log(values);
+        nextHandler()
+        registerUser(values.email,values.password);
       }}
     >
       {(formik) => (
@@ -59,7 +63,7 @@ export const SignUpForm = (props) => {
           <div className={classes.form}>
               <div className={classes.social}>
                   
-                  <SocialMediaBox />
+                  <SocialMediaBox google={signInWithGoogle} />
                   <h5 className={classes.note}>Ou</h5>
               </div>
               <div className={classes.submit}>
@@ -67,24 +71,29 @@ export const SignUpForm = (props) => {
         </div>
               
                 {next === 1 && 
-                <div className={classes.formContent}>
-                <button className={classes.arrowLeft} onClick={previousHandler}>
-                  <svg width="60px" height="80px" viewBox="0 0 50 80" >
-                    <polyline fill="none" stroke="#005236" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
-                  45.63,75.8 0.375,38.087 45.63,0.375 "/>
-                  </svg>  
-                </button>
-                <Form>
-                  <StepOne />
-                </Form>
-                <button className={classes.arrowRight} onClick={nextHandler} type="submit">
-                  <svg width="60px" height="80px" viewBox="0 0 50 80" >
-                    <polyline fill="none" stroke="#005236" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
-                  0.375,0.375 45.63,38.087 0.375,75.8 "/>
-                  </svg>
-                </button>
-
-              </div>
+                
+                 
+                  <Form>
+                    <div className={classes.formContent}>
+                      <button className={classes.arrowLeft} onClick={previousHandler}>
+                      <svg width="60px" height="80px" viewBox="0 0 50 80" >
+                        <polyline fill="none" stroke="#005236" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
+                      45.63,75.8 0.375,38.087 45.63,0.375 "/>
+                      </svg>  
+                      </button>
+                      <StepOne />
+                      <button className={classes.arrowRight} type="submit">
+                        <svg width="60px" height="80px" viewBox="0 0 50 80" >
+                          <polyline fill="none" stroke="#005236" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
+                        0.375,0.375 45.63,38.087 0.375,75.8 "/>
+                        </svg>
+                      </button>
+                    </div>
+                    
+                    
+                  </Form>
+                 
+                 
                 }
                  {next === 2 && 
                 <div className={classes.formContent}>

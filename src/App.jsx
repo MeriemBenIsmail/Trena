@@ -1,5 +1,5 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css"
+
 import { useUserContext } from "./contexts/userContext";
 import { Alert } from "react-bootstrap"
 import { Auth }from "./pages/Auth";

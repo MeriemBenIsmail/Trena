@@ -12,17 +12,14 @@ import { useUserContext } from "../../../contexts/userContext";
 export const SignInForm = (props) => {
   
   const [email,setEmail]= useState('');
-  const {forgoPassword,signInUser} = useUserContext();
+  const {signInWithGoogle,forgotPassword,signInUser} = useUserContext();
   const forgotPasswordHandler = () => {
-   /* const email = emailRef.current.value;
-    if (email)
-    forgoPassword(email).then(() => {
-        emailRef.current.value = "";
-      });*/
-      
-
-
-      console.log(email);
+    if(email) {
+      forgotPassword(email);
+      props.setShowPopup(true)
+      props.closePopup()
+    } 
+    
   };
   const validate = Yup.object({
     email: Yup.string()
@@ -60,7 +57,7 @@ export const SignInForm = (props) => {
           </div>
           <div className={classes.form}>
             <Form>
-              <TextField label="Email" name="email" type="email"  />
+              <TextField label="Email" name="email" type="email" emailchange={setEmail}/>
               <TextField label="Mot De Passe" name="password" type="password" />
               <div className={classes.submit}>
                 <Button color="#005236" content="Se Connecter" type="submit" />
@@ -68,7 +65,7 @@ export const SignInForm = (props) => {
               </div>
               <div className={classes.social}>
                  
-                  <SocialMediaBox />
+                  <SocialMediaBox google={signInWithGoogle} />
               </div>
               <h5 className={classes.note} onClick={forgotPasswordHandler} >Mot De Passe Oublié ?</h5>
               
