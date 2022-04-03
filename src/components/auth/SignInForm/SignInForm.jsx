@@ -8,11 +8,12 @@ import { SocialMediaBox } from "../../../UI/SocialMediaBox/SocialMediaBox";
 import { Line } from "../../../UI/line/Line";
 import { Circle } from "../../../UI/circle/Circle";
 import { useUserContext } from "../../../contexts/userContext";
-
+import { useNavigate } from "react-router-dom";
 export const SignInForm = (props) => {
   
+  const navigate = useNavigate();
   const [email,setEmail]= useState('');
-  const {signInWithGoogle,forgotPassword,signInUser} = useUserContext();
+  const {signInWithGoogle,forgotPassword,signInUser,errorLogin} = useUserContext();
   const forgotPasswordHandler = () => {
     if(email) {
       forgotPassword(email);
@@ -40,6 +41,10 @@ export const SignInForm = (props) => {
       onSubmit={(values) => {
        console.log(values);
        signInUser(values.email,values.password);
+       setTimeout(() => {
+        navigate("/home");
+      }, 2000);
+    
       }}
       
     >
@@ -63,6 +68,10 @@ export const SignInForm = (props) => {
                 <Button color="#005236" content="Se Connecter" type="submit" />
                 
               </div>
+
+              {errorLogin && <div className={classes.signinerror}>
+                  False credentials , try again 
+              </div>}
               <div className={classes.social}>
                  
                   <SocialMediaBox google={signInWithGoogle} />

@@ -23,7 +23,8 @@ export const useUserContext = () => {
 export const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [errorLogin, setErrorLogin] = useState("");
+  const [errorSignUp, setErrorSignUp] = useState("");
 
   useState(() => {
     setLoading(true);
@@ -33,7 +34,8 @@ export const UserContextProvider = ({ children }) => {
       } else {
         setUser(null);
       }
-      setError("");
+      setErrorLogin("");
+      setErrorSignUp("");
       setLoading(false);
     });
     return unsubscribe;
@@ -48,7 +50,7 @@ export const UserContextProvider = ({ children }) => {
         })
       )
       .then((res) => console.log(res))
-      .catch((err) => setError(err.message))
+      .catch((err) => setErrorSignUp(err.message))
       .finally(() => setLoading(false));
   };
 
@@ -56,7 +58,7 @@ export const UserContextProvider = ({ children }) => {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((res) => console.log(res))
-      .catch((err) => setError(err.code))
+      .catch((err) => setErrorLogin(err.code))
       .finally(() => setLoading(false));
   };
 
@@ -91,7 +93,8 @@ const signInWithGoogle = async () => {
   const contextValue = {
     user,
     loading,
-    error,
+    errorLogin,
+    errorSignUp,
     signInUser,
     registerUser,
     logoutUser,
