@@ -13,7 +13,7 @@ export const SignInForm = (props) => {
   
   const navigate = useNavigate();
   const [email,setEmail]= useState('');
-  const {signInWithGoogle,forgotPassword,signInUser,errorLogin} = useUserContext();
+  const {signInWithGoogle,forgotPassword,signInUser,errorLogin, signInWithFacebook} = useUserContext();
   const forgotPasswordHandler = () => {
     if(email) {
       forgotPassword(email);
@@ -41,9 +41,12 @@ export const SignInForm = (props) => {
       onSubmit={(values) => {
        console.log(values);
        signInUser(values.email,values.password);
-       setTimeout(() => {
-        navigate("/home");
-      }, 2000);
+       if(errorLogin === false){
+        setTimeout(() => {
+          navigate("/home");
+        }, 2000);
+       }
+      
     
       }}
       
@@ -70,11 +73,11 @@ export const SignInForm = (props) => {
               </div>
 
               {errorLogin && <div className={classes.signinerror}>
-                  False credentials , try again 
+                  Ce Compte n'existe pas.Veuillez reessayer
               </div>}
               <div className={classes.social}>
                  
-                  <SocialMediaBox google={signInWithGoogle} />
+                  <SocialMediaBox google={signInWithGoogle} fb={signInWithFacebook} />
               </div>
               <h5 className={classes.note} onClick={forgotPasswordHandler} >Mot De Passe Oublié ?</h5>
               
