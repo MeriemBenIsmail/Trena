@@ -1,0 +1,9 @@
+.stepTwo {
+    display: flex;
+    flex-direction: column;
+ 
+}
+.select {
+    margin-top: 100px;
+    margin-bottom: 40px;
+}

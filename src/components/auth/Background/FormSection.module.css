@@ -10,9 +10,20 @@
     
     
 }
+.formContainer {
+    margin-top: -80px;
+}
 .formSection > img {
     position: absolute;
     top: 0;
     left: -106px;
     z-index: 2;
 }
+.toggleSection {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+   
+}
+

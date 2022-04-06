@@ -18,6 +18,9 @@ export const StepOne = (props) => {
           form="signup"
           failed={props.failed}
         />
+        {props.errorSignUp && <div className={classes.signuperror}>
+                  Email déjà utilisé !
+              </div>}
         
       </div>
     </div>
