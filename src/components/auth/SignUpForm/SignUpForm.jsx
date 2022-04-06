@@ -9,6 +9,8 @@ import { useState } from "react";
 import { StepOne } from "./Step1";
 import { StepTwo } from "./Step2";
 import { useUserContext } from "../../../contexts/userContext";
+import { StepThree } from './Step3';
+import {  useNavigate } from "react-router-dom";
 export const SignUpForm = (props) => {
   const { registerUser, signInWithGoogle,errorSignUp } = useUserContext();
 
@@ -19,7 +21,18 @@ export const SignUpForm = (props) => {
     password: Yup.string()
       .required("Mot de passe obligatoire !")
       .min(8, " !")
-      .matches(/^(?=.*[A-Z])/, "Doit contenir au moins 8 characters et 1 lettre majuscule")
+      .matches(/^(?=.*[A-Z])/, "Doit contenir au moins 8 characters et 1 lettre majuscule"),
+      confirmpassword: Yup.string().when("password", {
+        is: (val) => (val && val.length > 0 ? true : false),
+        then: Yup.string().oneOf([Yup.ref("password")], "Passwords Must Match !"),
+      }),
+     
+  });
+  const validateStep2 = Yup.object({
+    telephone: Yup.string()
+      
+      .required("Telephone obligatoire"),
+   
      
   });
   const [next, setNext] = useState(1);
@@ -38,38 +51,46 @@ export const SignUpForm = (props) => {
       setNext(2);
     }
   };
+  
+  const submitSignUp = (values) => {
+    registerUser(values.email,values.password);
+    if(errorSignUp !== ""){
+      console.log(errorSignUp)
+    } else {
+      nextHandler()
+    }
+    
+  }
   return (
     <Formik
       initialValues={{
         email: "",
         password: "",
       }}
-      validationSchema={validate}
+      validationSchema={next===1?validate:validateStep2}
       onSubmit={(values) => {
-        nextHandler()
-        registerUser(values.email,values.password);
+        submitSignUp(values)
+        
       }}
     >
       {(formik) => (
         <div className={classes.signUpForm}>
-          <div className={classes.header}>
-          <div className={classes.circleContainer}>
+         {next!==3 && <div className={classes.header}>
+            <div className={classes.circleContainer}>
               <Circle color="#6BC4A6" width="26px" height="26px" />
               <Circle color="#6BC4A6" width="32px" height="32px" />
               <Circle color="#005236" width="40px" height="40px" />
             </div>
             <h2 className={classes.title}>Inscrivez-Vous</h2>
             <Line />
-          </div>
+          </div>}
           <div className={classes.form}>
-              <div className={classes.social}>
+              {next!==3 && <div className={classes.social}>
                   
                   <SocialMediaBox google={signInWithGoogle} />
                   <h5 className={classes.note}>Ou</h5>
-              </div>
-              <div className={classes.submit}>
-         
-        </div>
+              </div>}
+              
               
                 {next === 1 && 
                 
@@ -82,7 +103,7 @@ export const SignUpForm = (props) => {
                       45.63,75.8 0.375,38.087 45.63,0.375 "/>
                       </svg>  
                       </button>
-                      <StepOne />
+                      <StepOne errorSignUp={errorSignUp} />
                       <button className={classes.arrowRight} type="submit">
                         <svg width="60px" height="80px" viewBox="0 0 50 80" >
                           <polyline fill="none" stroke="#005236" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
@@ -97,6 +118,7 @@ export const SignUpForm = (props) => {
                  
                  
                 }
+                 
                  {next === 2 && 
                 <div className={classes.formContent}>
                 <button className={classes.arrowLeft} onClick={previousHandler}>
@@ -108,7 +130,7 @@ export const SignUpForm = (props) => {
                 <Form>
                   <StepTwo />
                 </Form>
-                <button className={classes.arrowRight} onClick={nextHandler}>
+                <button className={classes.arrowRight} onClick={nextHandler} type="submit">
                   <svg width="60px" height="80px" viewBox="0 0 50 80" >
                     <polyline fill="none" stroke="#005236" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
                   0.375,0.375 45.63,38.087 0.375,75.8 "/>
@@ -117,12 +139,13 @@ export const SignUpForm = (props) => {
 
               </div>
                 }
+                {next ===3 && 
+                  <StepThree />
+                }
                
              
           </div>
-          {errorSignUp && <div className={classes.signuperror}>
-                  Email déjà utilisé !
-              </div>}
+         
         </div>
       )}
     </Formik>

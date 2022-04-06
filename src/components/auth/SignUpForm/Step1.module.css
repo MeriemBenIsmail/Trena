@@ -48,4 +48,15 @@
     margin-top: -15px;
 }
 
+.signuperror {
+    color: red;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 12px;
+    margin: 5px 0 4px 0;
+    display: block;
+    height: 18px;
+
+}
 

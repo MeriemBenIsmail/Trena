@@ -77,7 +77,7 @@ export const SignInForm = (props) => {
               </div>}
               <div className={classes.social}>
                  
-                  <SocialMediaBox google={signInWithGoogle} fb={signInWithFacebook} />
+                  <SocialMediaBox google={signInWithGoogle}  />
               </div>
               <h5 className={classes.note} onClick={forgotPasswordHandler} >Mot De Passe Oublié ?</h5>
               
