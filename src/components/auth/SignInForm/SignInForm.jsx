@@ -39,12 +39,13 @@ export const SignInForm = (props) => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
-       console.log(values);
+ 
        signInUser(values.email,values.password);
-       if(errorLogin === false){
+       if(errorLogin === ""){
+        props.onSubmitForm()
         setTimeout(() => {
           navigate("/home");
-        }, 2000);
+        }, 2500);
        }
       
     
@@ -77,7 +78,7 @@ export const SignInForm = (props) => {
               </div>}
               <div className={classes.social}>
                  
-                  <SocialMediaBox google={signInWithGoogle}  />
+                  <SocialMediaBox google={signInWithGoogle} fb={signInWithFacebook}  />
               </div>
               <h5 className={classes.note} onClick={forgotPasswordHandler} >Mot De Passe Oublié ?</h5>
               

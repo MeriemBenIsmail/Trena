@@ -63,6 +63,18 @@
     }
     
 }
+@media screen and (max-width:700px) {
+    .signInForm .header {
+         font-size: 23px;
+     }
+     
+ }
+ @media screen and (max-width:600px) {
+    .circleContainer {
+        display: none;
+    }
+     
+ }
 
 .signinerror {
     color: red;

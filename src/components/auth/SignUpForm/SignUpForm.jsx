@@ -66,9 +66,13 @@ export const SignUpForm = (props) => {
       initialValues={{
         email: "",
         password: "",
+        telephone:"",
+        confirmpassword:"",
+        profession:"",
       }}
-      validationSchema={next===1?validate:validateStep2}
+      validationSchema={next===1 ? validate:validateStep2}
       onSubmit={(values) => {
+        console.log(values)
         submitSignUp(values)
         
       }}
@@ -98,14 +102,14 @@ export const SignUpForm = (props) => {
                   <Form>
                     <div className={classes.formContent}>
                       <button className={classes.arrowLeft} onClick={previousHandler} disabled type="button">
-                      <svg width="60px" height="80px" viewBox="0 0 50 80" >
+                      <svg viewBox="0 0 50 80" >
                         <polyline fill="none" stroke="#005236" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
                       45.63,75.8 0.375,38.087 45.63,0.375 "/>
                       </svg>  
                       </button>
                       <StepOne errorSignUp={errorSignUp} />
                       <button className={classes.arrowRight} type="submit">
-                        <svg width="60px" height="80px" viewBox="0 0 50 80" >
+                        <svg  viewBox="0 0 50 80" >
                           <polyline fill="none" stroke="#005236" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
                         0.375,0.375 45.63,38.087 0.375,75.8 "/>
                         </svg>
@@ -120,24 +124,26 @@ export const SignUpForm = (props) => {
                 }
                  
                  {next === 2 && 
+                  <Form>
                 <div className={classes.formContent}>
-                <button className={classes.arrowLeft} onClick={previousHandler}>
-                  <svg width="60px" height="80px" viewBox="0 0 50 80" >
+                <button className={classes.arrowLeft} type="button" onClick={previousHandler}>
+                  <svg  viewBox="0 0 50 80" >
                     <polyline fill="none" stroke="#005236" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
                   45.63,75.8 0.375,38.087 45.63,0.375 "/>
                   </svg>  
                 </button>
-                <Form>
+               
                   <StepTwo />
-                </Form>
-                <button className={classes.arrowRight} onClick={nextHandler} type="submit">
-                  <svg width="60px" height="80px" viewBox="0 0 50 80" >
+               
+                <button className={classes.arrowRight} type="submit">
+                  <svg  viewBox="0 0 50 80" >
                     <polyline fill="none" stroke="#005236" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
                   0.375,0.375 45.63,38.087 0.375,75.8 "/>
                   </svg>
                 </button>
 
               </div>
+              </Form>
                 }
                 {next ===3 && 
                   <StepThree />
