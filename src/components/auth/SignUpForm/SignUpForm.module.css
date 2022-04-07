@@ -82,8 +82,9 @@
     z-index: 99;
   }
   
-  .formContent  svg {
- 
+  .arrowLeft  svg,.arrowRight svg {
+    width: 60px;
+    height: 80px;
   }
   
   .formContent  .arrowLeft {
@@ -124,3 +125,61 @@
   polyline {
     transition: all 250ms ease-in-out;
   }
+  @media screen and (max-width:700px) {
+    .signUpForm .header {
+         font-size: 23px;
+     }
+     
+ }
+ @media screen and (max-width:600px) {
+    .circleContainer {
+        display: none;
+    }
+    .formContent  .arrowRight {
+
+      width: 50px;
+      height: 70px;
+  
+    }
+    .formContent  .arrowLeft {
+      cursor: pointer;
+      width: 50px;
+      height: 70px;
+  
+    }
+    .formContent  .arrowRight svg {
+
+      width: 40px;
+      height: 60px;
+  
+    }
+    .formContent  .arrowLeft svg{
+      cursor: pointer;
+      width: 40px;
+      height: 60px;
+  
+    }
+    .formContent {
+      grid-gap:30px;
+    }
+     
+ }
+ @media screen and (max-width:550px) {
+
+  .formContent  .arrowRight {
+
+    width: 50px;
+    height: 70px;
+
+  }
+  .formContent  .arrowLeft {
+    cursor: pointer;
+    width: 50px;
+    height: 70px;
+
+  }
+  .formContent {
+    grid-gap:30px;
+  }
+   
+}

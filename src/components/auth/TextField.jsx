@@ -53,7 +53,7 @@ export const TextField = ({ label, ...props }) => {
       {getStyle()}
       <div className={classes.input} style={style} >
         
-        <input onFocus={changeColor} onBlur={resetColor} onInput={handleChange}
+        <input placeholder={props.placeholder} onFocus={changeColor} onBlur={resetColor} onInput={handleChange}
           className={classes.formControl}
           {...field} {...props} 
           autoComplete="off" style={isFocus && !meta.touched && !meta.error ?  {borderTop:border,borderBottom:border} : styleErrorInput } type={passVisible && props.type === "password" ? "text" : props.type }

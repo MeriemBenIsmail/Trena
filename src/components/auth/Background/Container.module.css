@@ -3,6 +3,11 @@
     width: 100vw;
     box-sizing: border-box;
     overflow: hidden;
+    background: url(../../../assets/soccerPlayer.jpg) no-repeat;
+    background-size: cover;
+
+    
+   
 }
 .authBody {
     display: grid;
@@ -35,4 +40,77 @@
         display: grid;
         grid-template-columns: 100vw 80vw;
     }
+}
+@media only screen and (max-width: 500px) {
+    .authBody .welcomeDiv {
+       
+    }
+}
+
+.authBody.hidden {
+    transform: translateX(0vw);
+    transition: transform 1s ease-out;
+    transform-origin: 25vw 25vh;
+}
+
+.authBody.animate {
+    transform: translateX(25vw);
+    transform-origin: 25vw 25vh;
+    transition: transform 1s ease-in;
+}
+
+.authContainer .submitted {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+/*  transition: <property> <duration> <timing-function> <delay>;*/
+
+.formWhite {
+    height: 100vh;
+}
+
+.formWhite.hidden {
+    transform: translateX(0vw);
+    transition: transform 1s ease-out;
+}
+
+.formWhite.animate {
+    transform: translateX(-80vw);
+    transition: transform 1s ease-out;
+}
+
+.formWhite.exit {
+    transform: translateX(80vw);
+    transition: transform 1s ease-out;
+}
+
+
+.welcomeDiv.hidden {
+    transform: scale(1);
+    transition: transform 1s ease-out 1s;
+    transform-origin: 25vw 50vh;
+}
+
+.welcomeDiv.animate {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in 1s;
+    transform-origin: 25vw 50vh;
+}
+
+@media only screen and (max-width: 1000px) {
+    .authBody {
+        display: grid;
+        grid-template-columns: 100vw 80vw;
+    }
+    .authHead {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+ 
+   
 }

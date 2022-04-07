@@ -8,10 +8,10 @@ export const StepTwo = (props) => {
     <div className={classes.stepTwo}>
      
      <div className={classes.select}>
-      <SelectInput />
+      <SelectInput name="profession" form="signup" />
      </div>
          
-      <TextField label="Numéro De Téléphone" name="telephone" type="text" />
+      <TextField placeholder="+216 " label="Numéro de téléphone" name="telephone" type="text"  form="signup" />
         
    
     </div>
