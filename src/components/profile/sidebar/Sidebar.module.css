@@ -1,0 +1,7 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 2%;
+    border-right:max(0.2em,0.2vw) solid #6BC4A6;
+}

@@ -1,0 +1,15 @@
+.editProfile {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin-left: 10%;
+    width: max-content;
+}
+.editProfile .title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: max(2em,2.2vw);
+    letter-spacing: 0.05em;
+    color: #005236;
+
+}
