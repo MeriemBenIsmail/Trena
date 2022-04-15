@@ -2,7 +2,7 @@ import "./App.css";
 
 import { useUserContext } from "./contexts/userContext";
 import { Alert } from "react-bootstrap"
-import { Auth }from "./pages/Auth";
+import { Profile } from './pages/Profile'
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { Home }from "./pages/Home"
@@ -16,6 +16,7 @@ function App() {
         <Route exact path="/login" element={<Login></Login>} />
         <Route exact path="/signup" element={<Signup></Signup>} />
         <Route exact path="/home" element={<Home></Home>} />
+        <Route exact path="/profil" element={<Profile></Profile> }/>
       </Routes>
     </Router>
    

@@ -1,0 +1,34 @@
+.edit {
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+    
+}
+.toggleSection {
+    display: flex;
+    justify-content: center;
+
+
+}
+.toggleSection .profilePic {
+    width:max(3em,4vw);
+    height: max(3em,4vw);
+}
+.toggleSection .toggle {
+    width:max(1.2em,2vw);
+    height: max(1.2em,2vw);
+    margin-top: 10%;
+    cursor: pointer;
+}
+.toggleSection .name {
+    font-size: max(1em,1vw) ;
+   
+}
+.content {
+    display: flex;
+    justify-content: center;
+ 
+}
+.content .editP {
+    width: max-content;
+}

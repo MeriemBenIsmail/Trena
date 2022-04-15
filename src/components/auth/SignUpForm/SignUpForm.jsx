@@ -10,7 +10,7 @@ import { StepOne } from "./Step1";
 import { StepTwo } from "./Step2";
 import { useUserContext } from "../../../contexts/userContext";
 import { StepThree } from './Step3';
-import {  useNavigate } from "react-router-dom";
+
 export const SignUpForm = (props) => {
   const { registerUser, signInWithGoogle,errorSignUp } = useUserContext();
 
@@ -20,7 +20,7 @@ export const SignUpForm = (props) => {
       .required("Email obligatoire !"),
     password: Yup.string()
       .required("Mot de passe obligatoire !")
-      .min(8, " !")
+      .min(8, "Doit contenir au moins 8 characters !")
       .matches(/^(?=.*[A-Z])/, "Doit contenir au moins 8 characters et 1 lettre majuscule"),
       confirmpassword: Yup.string().when("password", {
         is: (val) => (val && val.length > 0 ? true : false),
@@ -32,6 +32,8 @@ export const SignUpForm = (props) => {
     telephone: Yup.string()
       
       .required("Telephone obligatoire"),
+    profession: Yup.string()
+    .default('Demandeur de réservation')
    
      
   });
