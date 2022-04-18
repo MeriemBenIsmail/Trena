@@ -1,6 +1,5 @@
 import React from 'react'
 import { useUserContext } from "../contexts/userContext";
-import { Popup } from '../UI/popup/Popup';
 import { useNavigate } from "react-router-dom";
 export const Home = () => {
   const { user, logoutUser } = useUserContext();

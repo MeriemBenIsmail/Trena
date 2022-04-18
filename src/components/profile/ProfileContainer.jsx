@@ -4,19 +4,27 @@ import { Sidebar } from './sidebar/Sidebar';
 import man from '../../assets/man.png';
 import toggle from '../../assets/toggle.svg';
 import { EditProfile } from './EditProfile';
-import { Divider } from '../../UI/divider/Divider';
 import { Setting } from './Setting';
 import { Reservation } from './Reservation';
 import { Team } from './Team';
 import { Preferences } from './Preferences';
+import { Divider } from '../../UI/divider/Divider';
+import { useUserContext } from '../../contexts/userContext';
+import { ProgressCircle } from '../../UI/progressCircle/ProgressCircle';
 export const ProfileContainer = () => {
   
+    const { user, logoutUser } = useUserContext();
     const [active,setActive] = useState(0);
+    const [menuIsOpen,setMenuIsOpen] = useState(false);
     
     return (
     <div className={classes.edit}>
         <div className={classes.content}>
-            <Sidebar active={active} setActive={setActive} />
+            <div className={classes.side}>
+                <Sidebar active={active} setActive={setActive} />
+                
+            </div>
+            
            
             {
                 active === 0 &&
@@ -55,11 +63,24 @@ export const ProfileContainer = () => {
             }
         </div>
        
-        <div className={classes.toggleSection}>
-            <img className={classes.profilePic} src={man} alt="" />
-            <h4 className={classes.name}>Foulen Fouleni</h4>
-            <img className={classes.toggle} src={toggle} alt="" />
-        </div>
+      {  /*<div className={classes.menuSection}>
+            
+            <div className={classes.toggleSection}>
+                <img className={classes.profilePic} src={man} alt="" />
+                <h4 className={classes.name}>Foulen Fouleni</h4>
+                <img className={classes.toggle} src={toggle} alt="" onClick={() => {setMenuIsOpen(!menuIsOpen)}} />
+            </div>
+           {
+            menuIsOpen && 
+            <div className={classes.menu}>
+                <Menu logoutUser={logoutUser} />
+            </div>}
+           </div>*/}
+           <div className={classes.progress}>
+             <ProgressCircle />
+           </div>
+           
+        
        
 
 
