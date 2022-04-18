@@ -9,9 +9,13 @@ import { Setting } from './Setting';
 import { Reservation } from './Reservation';
 import { Team } from './Team';
 import { Preferences } from './Preferences';
+import { Menu } from './Menu';
+import { useUserContext } from '../../contexts/userContext';
 export const ProfileContainer = () => {
   
+    const { user, logoutUser } = useUserContext();
     const [active,setActive] = useState(0);
+    const [menuIsOpen,setMenuIsOpen] = useState(false);
     
     return (
     <div className={classes.edit}>
@@ -55,10 +59,17 @@ export const ProfileContainer = () => {
             }
         </div>
        
-        <div className={classes.toggleSection}>
-            <img className={classes.profilePic} src={man} alt="" />
-            <h4 className={classes.name}>Foulen Fouleni</h4>
-            <img className={classes.toggle} src={toggle} alt="" />
+        <div className={classes.menuSection}>
+            <div className={classes.toggleSection}>
+                <img className={classes.profilePic} src={man} alt="" />
+                <h4 className={classes.name}>Foulen Fouleni</h4>
+                <img className={classes.toggle} src={toggle} alt="" onClick={() => {setMenuIsOpen(!menuIsOpen)}} />
+            </div>
+           {
+            menuIsOpen && 
+            <div className={classes.menu}>
+                <Menu logoutUser={logoutUser} />
+            </div>}
         </div>
        
 

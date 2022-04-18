@@ -1,13 +1,19 @@
 .edit {
     display: flex;
-    justify-content: space-between;
+    
     padding: 1%;
+    width: 100%;
+    
     
 }
 .toggleSection {
     display: flex;
-    justify-content: center;
-
+    justify-content: space-between;
+    margin-right: 50px;
+  
+    position: relative;
+    position: sticky;
+    display: none;
 
 }
 .toggleSection .profilePic {
@@ -21,7 +27,10 @@
     cursor: pointer;
 }
 .toggleSection .name {
-    font-size: max(1em,1vw) ;
+    font-size: max(1em,1.3vw) ;
+    color: #A5A5A5;
+    font-weight: 600;
+   
    
 }
 .content {
@@ -31,4 +40,8 @@
 }
 .content .editP {
     width: max-content;
+}
+@media screen and (max-width:1220px) {
+  
+
 }

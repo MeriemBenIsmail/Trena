@@ -1,11 +1,14 @@
 .progress-radial {
   
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: max(12em,13vw);
+    height: max(12em,13vw);
     border-radius: 50%;
     border: 1px solid #FE982A;
     background-color: #FE982A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   /* -------------------------------------
@@ -13,15 +16,14 @@
    * ------------------------------------- */
   .progress-radial .overlay {
     position: absolute;
-    width: 140px;
-    height: 140px;
-    background-color: #fffde8;
+    width: max(7em,8vw);
+    height: max(7em,8vw);
+    background-color: #fff;
     border-radius: 50%;
-    margin-left: 20px;
-    margin-top: 20px;
+border: 1px solid #FE982A;
     text-align: center;
-    line-height: 60px;
-    font-size: 20px;
+   
+    font-size: max(0.8em,1.5vw);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +76,7 @@
   }
   
   .progress-50 {
-    background-image: linear-gradient(-90deg, #FE982A 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #FE982A 50%, #A5A5A5 50%, #A5A5A5);
+    background-image: linear-gradient(-90deg, #FE982A 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0)), linear-gradient(270deg, #FE982A 50%, #fff 50%, #fff);
   }
   
   .progress-55 {

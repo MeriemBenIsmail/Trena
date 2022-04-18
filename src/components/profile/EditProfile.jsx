@@ -38,13 +38,9 @@ export const EditProfile = () => {
                         </div>
                         <div className={classes.inputGroup}>
                             <TextField label="Date De Naissance" name="birthday" type="date"/>
-                            <TextField label="Téléphone" name="phone" type="text"/>
-                        </div>
-                        <div className={classes.inputGroup}>
                             <TextField label="Adresse" name="address" type="text"/>
                         </div>
-                        
-                    
+          
                         <div className={classes.submit}>
                         <Button color="#005236" content="Enregistrer" type="submit" />
                         

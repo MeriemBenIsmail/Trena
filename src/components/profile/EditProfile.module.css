@@ -20,6 +20,7 @@
 .formContent {
     display: flex;
     flex-direction: column;
+    width: 100%;
     
 }
 .formContent .inputGroup {
@@ -27,6 +28,7 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 2%;
     width: 100%;
+    margin: 1% 0;
 
 }
 .wrapper {
@@ -50,3 +52,92 @@
     justify-content: center;
     align-items: center;
 }
+.submit {
+
+    margin: 2% 0;
+}
+@media screen and (max-width:1228px) {
+    .wrapper {
+        grid-template-columns: 2fr 1fr;
+        
+    }
+    
+
+    
+}
+@media screen and (max-width:1150px) {
+    .wrapper {
+        grid-template-columns: 1fr 0.5fr;
+        grid-gap:2%;
+    }
+    
+
+    
+}
+@media screen and (max-width:1130px) {
+
+    .wrapper {
+        grid-template-columns: 2.2fr 1fr;
+        grid-gap:2%;
+      
+    }
+    
+    
+
+
+    
+}
+@media screen and (max-width:1120px) {
+.wrapper {
+    grid-template-columns: 1fr 0.3fr;
+}
+  
+    
+}
+@media screen and (max-width:1100px) {
+    .wrapper {
+        grid-template-columns: 0.9fr 0.4fr;
+    }
+      
+        
+    }
+    @media screen and (max-width:1000px) {
+        .wrapper {
+            grid-template-columns: 0.9fr 0.3fr;
+        }
+          
+            
+        }
+        @media screen and (max-width:940px) {
+            .progressSection {
+                display: none;
+            }
+            .wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+              
+                
+        }
+        @media screen and (max-width:810px) {
+  
+            .wrapper {
+               
+                width: 90%;
+            }
+              
+                
+        }
+        @media screen and (max-width:810px) {
+  
+            .wrapper {
+               
+                width: 90%;
+                overflow-y: visible;
+            }
+       
+              
+                
+        }
