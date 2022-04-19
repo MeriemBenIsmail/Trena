@@ -6,8 +6,10 @@
     bottom: 0;
 }
 .title h1{
-    font-weight: 350;
-    font-size: 1.8vw;
+    font-weight: 500;
+    font-size: 2.5vw;
+    margin-left: 1vw;
+    margin-top: 0;
     
 
 }
@@ -19,7 +21,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    animation: roadRunnerOut 0.5s;
+    
 }
 @keyframes roadRunnerOut {
     100% {
@@ -32,16 +34,10 @@
 .meriem{
     width: 97%;
     height: 80%;
-    display: flex;
+ 
 
     
 
-}
-.meriem .form {
-    flex: 10;
-}
-.meriem .progressSection {
-    
 }
 
 .switcherContainer {

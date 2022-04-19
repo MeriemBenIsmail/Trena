@@ -1,16 +1,20 @@
 import React from 'react'
-import classes from './Reservation.module.css';
+import style from './Reservation.module.css';
 
 export const Reservation = () => {
   return (
-    <div className={classes.editProfile}>
-        <h2 className={classes.title}>
-            Réservations de terrains
-        </h2>
-        <div className={classes.form}>
-            form here
+    <div className={style.container}>
+      
+      <div className={style.title}><h1>RESERVATIONS</h1> </div>
+      
+        <div className={style.meriem}>
+          <div className={style.form}>
+            
+          </div>
+         
+            
+            
         </div>
-
-    </div>
+      </div>
   )
 }

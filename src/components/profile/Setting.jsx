@@ -71,7 +71,7 @@ export const Setting = () => {
                       name="confirmpassword"
                       type="password"
                     />
-                    <Button content="Save" color="#005236" />
+                    <Button content="Enregistrer" color="#005236" />
                   </div>
                 </Form>
                 
@@ -92,17 +92,14 @@ export const Setting = () => {
                         type="email"
                       />
                       
-                      <Button content="Save" color="#005236" type="submit" />
+                      <Button content="Enregistrer" color="#005236" type="submit" />
                     </div>
                  </Form>
                 
               }
             </div>
           </div>
-          <div className={style.progressSection}>
-                <h2>Profil Complet</h2>
-                <ProgressCircle />
-            </div>
+         
             
             
         </div>

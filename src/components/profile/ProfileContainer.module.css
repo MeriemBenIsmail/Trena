@@ -5,6 +5,20 @@
     width: 100%;
     
     
+    
+}
+.content {
+    flex: 1;
+}
+.side {
+    display: flex;
+    width: 100%;
+}
+.progress {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .toggleSection {
     display: flex;

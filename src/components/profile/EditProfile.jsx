@@ -24,11 +24,11 @@ export const EditProfile = () => {
     
   >
     {(formik) => (
-      <div className={classes.editProfile}>
-        <h2 className={classes.title}>
-            Modifier Mon Profil
-        </h2>
-        <div className={classes.wrapper}>
+      <div className={classes.container}>
+        <div className={classes.title}>
+          <h1>MODIFIER MON PROFIL</h1> 
+        </div>
+        <div className={classes.meriem}>
             <div className={classes.form}>
             <Form>
                 <div className={classes.formContent}>
@@ -50,10 +50,7 @@ export const EditProfile = () => {
                 
             </Form>
             </div>
-            <div className={classes.progressSection}>
-                <h2>Profil Complet</h2>
-                <ProgressCircle />
-            </div>
+            
         </div>
         
       </div>
