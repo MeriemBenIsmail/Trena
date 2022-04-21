@@ -18,7 +18,10 @@ import {
   collection,
   where,
   addDoc,
-  getDoc
+  getDoc,
+  doc,
+  updateDoc
+
 } from 'firebase/firestore'
 
 
@@ -35,6 +38,7 @@ export const UserContextProvider = ({ children }) => {
   const [errorSignUp, setErrorSignUp] = useState("");
   const [users, setUsers] = useState([]);
   const usersCollectionRef = collection(db, "users");
+
   useState(() => {
     setLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (res) => {
@@ -49,6 +53,15 @@ export const UserContextProvider = ({ children }) => {
     });
     return unsubscribe;
   }, []);
+  const updateUser = async (email,properties)=>{
+    const p =await getUser(email);
+    const docRef = doc(db, "users" , p.id);
+    updateDoc(docRef,{
+     adresse : properties.adresse,
+     phone : properties.phone,
+     role : properties.role
+    })
+  }
   const getUser = async (email)=>{
     const us = await (await getAllUsers()).filter((element)=>element.email === email);
     return us.length >0 ? us[0] : null ;
@@ -159,7 +172,8 @@ export const UserContextProvider = ({ children }) => {
     signInWithfacebook,
     getAllUsers,
     addUser,
-    getUser
+    getUser,
+    updateUser
   };
   return (
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>
