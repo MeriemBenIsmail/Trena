@@ -62,7 +62,7 @@ export const SignInForm = (props) => {
             </div>
             
             <h2 className={classes.title}>Connectez-Vous</h2>
-            <Line />
+            <Line color="#005326" />
           </div>
           <div className={classes.form}>
             <Form>

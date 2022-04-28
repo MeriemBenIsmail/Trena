@@ -88,7 +88,7 @@ export const SignUpForm = (props) => {
               <Circle color="#005236" width="40px" height="40px" />
             </div>
             <h2 className={classes.title}>Inscrivez-Vous</h2>
-            <Line />
+            <Line color="#005326" />
           </div>}
           <div className={classes.form}>
               {next!==3 && <div className={classes.social}>
