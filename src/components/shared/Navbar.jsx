@@ -17,7 +17,7 @@ export const Navbar = ({user,logout}) => {
         </Link>
         <ul className={classes.navlinks}>
             <li ><Link className={classes.link} to='/home'>Accueil</Link></li>
-            <li><Link className={classes.link} to='/terrain'>Terrains</Link></li>
+            <li><Link className={classes.link} to='/terrains'>Terrains</Link></li>
             <li><Link className={classes.link} to='/coachs'>Coachs</Link></li>
         </ul>
        {

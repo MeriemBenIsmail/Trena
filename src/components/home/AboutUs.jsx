@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import classes from './AboutUs.module.css';
 import { Line } from '../../UI/line/Line';
 import { Card } from './Card';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { Circle } from '../../UI/circle/Circle';
-import logo from '../../assets/logoorange.png'
+import logo from '../../assets/logoorange.png';
+import { useInView } from 'react-intersection-observer';
 export const AboutUs = () => {
     const variants1 = {
         hidden:{
@@ -63,6 +64,35 @@ export const AboutUs = () => {
 
         }
     }
+    const {ref, inView} = useInView({
+        threshold: 0.2 //20% should be visible
+      });
+      
+      //ref : element that we want to monitor : when ref in view => inView =true , else false
+      const animation = useAnimation();
+      
+      useEffect(() =>{
+         
+        // 3 hooks
+        if(inView) {
+          animation.start({
+            x: "0",
+            opacity: 1,
+            transition: {
+              type: 'spring' , duration: 1.2,bounce: 0.2
+            }
+          });
+        }
+        if(!inView) {
+          animation.start({x: "-100vw",
+          opacity:0,
+          transition: {
+            type: 'spring' , duration: 1,bounce: 0
+          }
+        })
+        }
+          
+      },[inView]);
   return (
     <div className={classes.aboutus}>
         <div className={classes.title}>
@@ -75,10 +105,10 @@ export const AboutUs = () => {
                 <div className={classes.circle}>
 
                 </div>
-                <div className={classes.cards}>
-                    <motion.div variants={variants1} initial="hidden" animate="animate"  style={{marginLeft: "80px"}}><Card title="Terrains" content="Lore lorem lorem lorem" num="1" /></motion.div>
-                    <motion.div variants={variants2} initial="hidden" animate="animate"  style={{marginLeft: "20px"}}><Card title="Coachs" content="Lore lorem lorem lorem" num="2" /></motion.div>
-                    <motion.div variants={variants3} initial="hidden" animate="animate"  style={{marginLeft: "80px"}}><Card title="Equipes" content="Lore lorem lorem lorem" num="3" /></motion.div>
+                <div ref={ref} className={classes.cards}>
+                    <motion.div animate={animation}  style={{marginLeft: "80px"}}><Card title="Terrains" content="Lore lorem lorem lorem" num="1" /></motion.div>
+                    <motion.div variants={variants2} animate={animation}  style={{marginLeft: "20px"}}><Card title="Coachs" content="Lore lorem lorem lorem" num="2" /></motion.div>
+                    <motion.div variants={variants3} animate={animation}  style={{marginLeft: "80px"}}><Card title="Equipes" content="Lore lorem lorem lorem" num="3" /></motion.div>
 
                 </div>
             </div>

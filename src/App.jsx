@@ -7,6 +7,8 @@ import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { Home }from "./pages/Home"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Terrain } from "./pages/Terrain";
+import { Coach } from "./pages/Coach";
 function App() {
   const {loading ,error ,user}= useUserContext();
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route exact path="/signup" element={<Signup></Signup>} />
         <Route exact path="/home" element={<Home></Home>} />
         <Route exact path="/profil" element={<Profile></Profile> }/>
+        <Route exact path="/terrains" element={<Terrain></Terrain> }/>
+        <Route exact path="/coachs" element={<Coach></Coach> }/>
       </Routes>
     </Router>
    

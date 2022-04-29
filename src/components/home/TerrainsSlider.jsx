@@ -3,7 +3,7 @@ import classes from './TerrainsSlider.module.css';
 import { Line } from '../../UI/line/Line';
 import terrains from '../../common/data/Terrains.json';
 import { TerrainCard } from '../terrain/TerrainCard';
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import SwiperCore, { EffectCoverflow, Pagination , Autoplay} from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -11,13 +11,15 @@ import "./Swiper.css";
 import img1 from '../../assets/terrains/1.jpg'
 import { Button } from '../../UI/button/Button';
 import Popup from '../../UI/popup/Popup';
+import { useNavigate } from 'react-router-dom';
 
 
 export const TerrainsSlider = () => {
 
-    SwiperCore.use([EffectCoverflow, Pagination])
+    SwiperCore.use([EffectCoverflow, Pagination,Autoplay])
 
     const [modalIsOpen,setModalIsOpen] = useState(false);
+    const navigate = useNavigate();
     
   return (
     <div className={classes.terrainWrapper}>
@@ -28,13 +30,12 @@ export const TerrainsSlider = () => {
         <div className={classes.terrainSlider} style={{backgroundImage:`url(${img1})`}}>
             <div className={classes.container}>
                 <div className={classes.btn}>
-                    <Button content="Voir Plus" color="#6BC4A6" />
+                    <Button content="Voir Plus" color="#6BC4A6" onClick={() => navigate('/terrains')} />
                 </div>
                 <div >
                 <Swiper
-                autoplay={true}
-                
-                loop={true}
+                    autoplay
+                    loop={true}
                     effect={"coverflow"}
                     grabCursor={true}
                     centeredSlides={true}
