@@ -4,6 +4,7 @@ import { Line } from '../../UI/line/Line';
 import { Card } from './Card';
 import { motion } from 'framer-motion';
 import { Circle } from '../../UI/circle/Circle';
+import logo from '../../assets/logoorange.png'
 export const AboutUs = () => {
     const variants1 = {
         hidden:{
@@ -82,7 +83,9 @@ export const AboutUs = () => {
                 </div>
             </div>
             <div className={classes.description}>
-                <h2>TRENA</h2>
+                    <div className={classes.logo}>
+                        <img src={logo} alt="" />
+                    </div>
                 <p>Plateforme Web Tunisienne</p>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, modi.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, delectus?</p>
