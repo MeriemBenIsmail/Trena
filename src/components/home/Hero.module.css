@@ -60,7 +60,7 @@
     height: 100%;
 }
 .gradient {
-    background: linear-gradient(90deg,#37A4A9, #005326, #6BC4A6,#FE982A);
+    background: linear-gradient(90deg,#37A4A9, #fff, #6BC4A6,#FE982A);
     background-size: 400%;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
