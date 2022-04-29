@@ -10,11 +10,14 @@ import "swiper/swiper.min.css";
 import "./Swiper.css";
 import img1 from '../../assets/terrains/1.jpg'
 import { Button } from '../../UI/button/Button';
+import Popup from '../../UI/popup/Popup';
 
 
 export const TerrainsSlider = () => {
 
     SwiperCore.use([EffectCoverflow, Pagination])
+
+    const [modalIsOpen,setModalIsOpen] = useState(false);
     
   return (
     <div className={classes.terrainWrapper}>
@@ -30,6 +33,7 @@ export const TerrainsSlider = () => {
                 <div >
                 <Swiper
                 autoplay={true}
+                
                 loop={true}
                     effect={"coverflow"}
                     grabCursor={true}
@@ -52,7 +56,7 @@ export const TerrainsSlider = () => {
                 {terrains.map((val,key) => {
                     return <div >
                         <SwiperSlide>
-                            <TerrainCard id={val.id} title={val.title} description={val.description} address={val.address} surface={val.surface} image={process.env.PUBLIC_URL + `/terrains/${val.id}.jpg`} review={val.review}  />
+                            <TerrainCard setModalIsOpen={setModalIsOpen} id={val.id} title={val.title} description={val.description} address={val.address} surface={val.surface} image={process.env.PUBLIC_URL + `/terrains/${val.id}.jpg`} review={val.review}  />
                         </SwiperSlide>
                         
                     </div> 
@@ -65,6 +69,7 @@ export const TerrainsSlider = () => {
             
 
         </div>
+      
 
     </div>
   )

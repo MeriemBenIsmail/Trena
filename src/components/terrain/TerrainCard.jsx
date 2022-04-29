@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './TerrainCard.module.css';
 import { Icon } from '@iconify/react';
 
 
-export const TerrainCard = ({id,title,address,image,surface,type,available,description,review}) => {
+
+export const TerrainCard = ({setModalIsOpen,id,title,address,image,surface,type,available,description,review}) => {
+
+    const [bannerIsOpen,setBannerIsOpen] = useState(false);
   return (
     <div className={classes.cardWrapper}>
-        <div className={classes.card}>
-            <img src={image}  alt="" />
+        <div className={classes.card} onMouseEnter={()=>{setBannerIsOpen(true)}} onMouseLeave={()=>{setBannerIsOpen(false)}}>
+            <img src={image}  alt=""  />
+           { bannerIsOpen && 
+                <div className={classes.banner}>
+                    <Icon onClick={setModalIsOpen(true)} icon="clarity:eye-line" color="white" width="30px" height="30px" alt />
+                    <Icon icon="iconoir:favourite-book" color="white" width="30px" height="30px"  />
+                    <Icon icon="bxs:book-add" color="white" width="30px" height="30px"  />
+                </div>
+           }
         </div>
         <div className={classes.detail}>
             <h2>{title}</h2>
