@@ -1,0 +1,49 @@
+.hero {
+    background: url(../../assets/soccerplayer1.png) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    filter: contrast(90%);
+    animation: backAn 150s infinite;
+
+   
+}
+@keyframes backAn {
+    0%   { background-position:0% 100%; }
+    50%   { background-position:100% 100%; }
+    100%   { background-position:0% 100%; }
+ }
+
+ .intro {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 60px;
+ }
+ .intro .parags  {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     color: #fff;
+     font-size: max(1.8em,2em);
+ }
+
+ .btn {
+     font-size: 20px;
+     margin-top: 50px;
+
+ }
+ .dynamictexts  li {
+     color: #005326;
+     list-style: none;
+
+
+ }
+
+@keyframes typing {
+    100% {
+        left: 100%;
+    }
+    
+}

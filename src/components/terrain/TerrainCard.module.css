@@ -1,0 +1,19 @@
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.cardWrapper .card {
+    width: 350px;
+    height: 303px;
+}
+.cardWrapper .card img {
+    width: 350px;
+    height: 200px;
+}
+.cardWrapper .details {
+    display: flex;
+    flex-direction: column;
+
+}
