@@ -1,0 +1,13 @@
+.coachSection .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.coachSection .title h2 {
+    color: #005326;
+    font-size: 28px;
+    font-weight: 600;
+    margin-left: 10px;
+    
+}
