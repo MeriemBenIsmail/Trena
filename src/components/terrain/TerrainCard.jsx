@@ -1,13 +1,13 @@
 import React from 'react'
 import classes from './TerrainCard.module.css';
 import { Icon } from '@iconify/react';
-import img1 from '../../assets/1.jpg';
+
 
 export const TerrainCard = ({id,title,address,image,surface,type,available,description,review}) => {
   return (
     <div className={classes.cardWrapper}>
         <div className={classes.card}>
-            <img src={img1}  alt="" />
+            <img src={image}  alt="" />
         </div>
         <div className={classes.detail}>
             <h2>{title}</h2>

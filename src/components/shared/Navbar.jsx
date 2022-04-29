@@ -1,13 +1,13 @@
 import React from 'react'
 import classes from './Navbar.module.css';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logowhite.png';
+import logo from '../../assets/logoorange.png';
 export const Navbar = () => {
   return (
     <div className={classes.nav}>
-        <div className={classes.logo}>
+        <Link to='/home' className={classes.logo}>
             <img src={logo} alt="" />
-        </div>
+        </Link>
         <ul className={classes.navlinks}>
             <li ><Link className={classes.link} to='/home'>Accueil</Link></li>
             <li><Link className={classes.link} to='/terrain'>Terrains</Link></li>
