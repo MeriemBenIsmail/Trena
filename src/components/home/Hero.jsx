@@ -4,7 +4,7 @@ import { Navbar } from '../shared/Navbar';
 import { motion } from 'framer-motion';
 import { Button } from '../../UI/button/Button';
 import logo from '../../assets/logoorange.png'
-export const Hero = () => {
+export const Hero = ({user,logoutUser}) => {
 
     const paragvariants = {
         hidden:{
@@ -23,7 +23,7 @@ export const Hero = () => {
     }
   return (
     <div className={classes.hero}>
-        <Navbar />
+        <Navbar user={user} logout={logoutUser} />
         <div className={classes.intro}>
             <div className={classes.parags}>
                 <motion.div className={classes.first} >

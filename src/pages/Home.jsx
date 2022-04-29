@@ -14,17 +14,13 @@ export const Home = () => {
   const handleSignup = () => {
     navigate('/signup')
   }
+  console.log(user)
   return (
 
     
     <div>
-      {/*<h1>Welcome to trena ! </h1>
-      {user && <h2>{user.email}</h2>}
-      
-      {user && <button onClick={logoutUser}>Log out</button>}
-      {!user && <button onClick={handlelogin}>Login</button>}
-  {!user && <button onClick={handleSignup}>Sign Up</button>}*/}
-  <Hero />
+     
+  <Hero user={user} logout={logoutUser} />
   <AboutUs />
   <TerrainsSlider />
   <Coach />
