@@ -112,3 +112,16 @@
    margin-top: -50px;
     margin-left: 45px;
 }
+
+@media screen and (max-width: 970px) {
+    .circleS {
+        display: none;
+    }    
+}
+@media screen and (max-width: 790px) {
+    .aboutus .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    } 
+}
