@@ -57,7 +57,7 @@ export const TerrainsSlider = () => {
                 {terrains.map((val,key) => {
                     return <div >
                         <SwiperSlide>
-                            <TerrainCard setModalIsOpen={setModalIsOpen} id={val.id} title={val.title} description={val.description} address={val.address} surface={val.surface} image={process.env.PUBLIC_URL + `/terrains/${val.id}.jpg`} review={val.review}  />
+                            <TerrainCard setModalIsOpen={setModalIsOpen} id={val.id} title={val.title} description={val.description} address={val.address} surface={val.surface} image={process.env.PUBLIC_URL + `/terrains/terrain${val.id}.jpg`} review={val.review}  />
                         </SwiperSlide>
                         
                     </div> 

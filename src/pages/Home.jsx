@@ -5,6 +5,7 @@ import { Hero } from '../components/home/Hero';
 import { AboutUs } from '../components/home/AboutUs';
 import { TerrainsSlider } from '../components/home/TerrainsSlider';
 import { Coach } from '../components/home/Coach';
+import Footer from '../components/shared/Footer';
 export const Home = () => {
   const { user, logoutUser } = useUserContext();
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ export const Home = () => {
   const handleSignup = () => {
     navigate('/signup')
   }
-  console.log(user)
+  //console.log(user)
   return (
 
     
@@ -24,6 +25,7 @@ export const Home = () => {
   <AboutUs />
   <TerrainsSlider />
   <Coach />
+  <Footer />
     </div>
   )
 }

@@ -34,8 +34,8 @@ export const useUserContext = () => {
 export const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [errorLogin, setErrorLogin] = useState("");
-  const [errorSignUp, setErrorSignUp] = useState("");
+  const [errorLogin, setErrorLogin] = useState(null);
+  const [errorSignUp, setErrorSignUp] = useState(null);
   const [users, setUsers] = useState([]);
   const usersCollectionRef = collection(db, "users");
 
@@ -106,7 +106,7 @@ export const UserContextProvider = ({ children }) => {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((res) => console.log(res))
-      .catch((err) => setErrorLogin(err.code))
+      .catch((err) => {setErrorLogin(err.code); })
       .finally(() => setLoading(false));
   };
 
