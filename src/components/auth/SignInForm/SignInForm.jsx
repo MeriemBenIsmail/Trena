@@ -41,7 +41,8 @@ export const SignInForm = (props) => {
       onSubmit={(values) => {
  
        signInUser(values.email,values.password);
-       if(errorLogin === ""){
+       
+       if(!errorLogin){
         props.onSubmitForm()
         setTimeout(() => {
           navigate("/home");
