@@ -8,7 +8,6 @@ import { useState } from 'react';
 import { terminate } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logowhite.png'
-
 export const Container = (props) => {
   
 
@@ -42,18 +41,6 @@ export const Container = (props) => {
   }
   return (
     <div className={classes.authContainer}>
-
-        <div className={classes.authHead}>
-          <img className={classes.logo} scr={LogoOranger} alt="" />
-          
-        </div>
-
-      <div className={classes.authHead}>
-           <Link to='/home' className={classes.logo}>
-                <img src={logo} alt="" />
-            </Link>
-      </div>
-       
         <div className={`${
           submitted && !showForm ? classes.animate : classes.hidden
         } ${classes.authBody} `}>

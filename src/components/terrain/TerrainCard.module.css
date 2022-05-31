@@ -14,7 +14,11 @@
     width: 350px;
     height: 44px;
     background: rgba(107, 196, 166, 0.5);
+<<<<<<< HEAD
    margin-top: -44px;
+=======
+    margin-top: -44px;
+>>>>>>> 17d050febb9f67552c8f484241f496184657d03a
     z-index: 99;
     transition: 0.2s ease-in-out;
     animation: fade;
@@ -24,6 +28,10 @@
     align-items: center;
    
  }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17d050febb9f67552c8f484241f496184657d03a
 .cardWrapper .card img {
     width: 350px;
     height: 200px;

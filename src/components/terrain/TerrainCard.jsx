@@ -9,7 +9,11 @@ export const TerrainCard = ({setModalIsOpen,id,title,address,image,surface,type,
     const [bannerIsOpen,setBannerIsOpen] = useState(false);
   return (
     <div className={classes.cardWrapper}>
+<<<<<<< HEAD
         <div className={classes.card} onMouseEnter={()=>{setBannerIsOpen(true)}} onMouseLeave={()=>{setBannerIsOpen(false)}}>
+=======
+        <div className={classes.card} /* onMouseEnter={()=>{setBannerIsOpen(true)}} onMouseLeave={()=>{setBannerIsOpen(false)}}*/>
+>>>>>>> 17d050febb9f67552c8f484241f496184657d03a
             <img src={image}  alt=""  />
            { bannerIsOpen && 
                 <div className={classes.banner}>
