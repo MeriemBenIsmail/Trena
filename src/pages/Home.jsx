@@ -1,10 +1,15 @@
 import React from 'react'
 import { useUserContext } from "../contexts/userContext";
-import { Popup } from '../UI/popup/Popup';
 import { useNavigate } from "react-router-dom";
 //import { Navbar } from 'react-bootstrap';
 import Navbar from '../components/auth/Navbar/Navbar';
-import Footer from '../components/auth/Footer/Footer';
+
+import { Hero } from '../components/home/Hero';
+import { AboutUs } from '../components/home/AboutUs';
+import { TerrainsSlider } from '../components/home/TerrainsSlider';
+import { Coach } from '../components/home/Coach';
+import Footer from '../components/shared/Footer';
+
 export const Home = () => {
   const { user, logoutUser } = useUserContext();
   const navigate = useNavigate();
@@ -14,18 +19,18 @@ export const Home = () => {
   const handleSignup = () => {
     navigate('/signup')
   }
+  //console.log(user)
   return (
 
     
     <div>
-      <Navbar /> 
-      <h1>Welcome to trena ! </h1>
-      {user && <h2>{user.email}</h2>}
-      
-      {user && <button onClick={logoutUser}>Log out</button>}
-      {!user && <button onClick={handlelogin}>Login</button>}
-      {!user && <button onClick={handleSignup}>Sign Up</button>}
-      <Footer />
+
+  <Hero user={user} logout={logoutUser} />
+  <AboutUs />
+  <TerrainsSlider />
+  <Coach />
+  <Footer />
+
     </div>
   )
 }

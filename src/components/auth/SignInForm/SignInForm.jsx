@@ -41,7 +41,8 @@ export const SignInForm = (props) => {
       onSubmit={(values) => {
  
        signInUser(values.email,values.password);
-       if(errorLogin === ""){
+       
+       if(!errorLogin){
         props.onSubmitForm()
         setTimeout(() => {
           navigate("/home");
@@ -62,7 +63,7 @@ export const SignInForm = (props) => {
             </div>
             
             <h2 className={classes.title}>Connectez-Vous</h2>
-            <Line />
+            <Line color="#005326" />
           </div>
           <div className={classes.form}>
             <Form>
