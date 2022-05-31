@@ -1,13 +1,16 @@
-.stepContainer {
+.stepWrapper{
     background: url(../../assets/terrainBack.jpg) no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
     filter: contrast(80%);
+    
+    
+}
+.stepContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 .stepContainer .step1 {
     margin-bottom: 20%;
