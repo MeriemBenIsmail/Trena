@@ -2,8 +2,10 @@ import React from 'react'
 import classes from './Container.module.css';
 import {PictureSection} from './PictureSection'
 import FormSection from './FormSection';
-import wavyLine from '../../../assets/wavyLine.svg';
+import Trena from '../../../assets/Trena.png'
+import LogoOranger from '../../../assets/LogoOranger.png'
 import { useState } from 'react';
+import { terminate } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logowhite.png'
 export const Container = (props) => {
@@ -39,12 +41,6 @@ export const Container = (props) => {
   }
   return (
     <div className={classes.authContainer}>
-      <div className={classes.authHead}>
-           <Link to='/home' className={classes.logo}>
-                <img src={logo} alt="" />
-            </Link>
-      </div>
-       
         <div className={`${
           submitted && !showForm ? classes.animate : classes.hidden
         } ${classes.authBody} `}>

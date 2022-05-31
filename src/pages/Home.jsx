@@ -6,6 +6,7 @@ import { AboutUs } from '../components/home/AboutUs';
 import { TerrainsSlider } from '../components/home/TerrainsSlider';
 import { Coach } from '../components/home/Coach';
 import Footer from '../components/shared/Footer';
+
 export const Home = () => {
   const { user, logoutUser } = useUserContext();
   const navigate = useNavigate();
@@ -20,12 +21,14 @@ export const Home = () => {
 
     
     <div>
+
      
   <Hero user={user} logout={logoutUser} />
   <AboutUs />
   <TerrainsSlider />
   <Coach />
   <Footer />
+
     </div>
   )
 }

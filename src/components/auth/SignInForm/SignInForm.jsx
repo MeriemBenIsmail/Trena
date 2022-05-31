@@ -28,7 +28,7 @@ export const SignInForm = (props) => {
       .required("Email Obligatoire !"),
     password: Yup.string()
       .required("Mot De Passe Obligatoire !")
-      .min(8, "Mot de passe doit avoir au minimum 8 characters !"),
+      .min(8, "Mot de passe doit avoir au minimum 8 caracteres !"),
   });
  
   return (
