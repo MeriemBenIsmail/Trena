@@ -45,7 +45,7 @@ export const Hero = ({user,logout}) => {
                 <motion.div className={classes.gradient} style={{color:" #6BC4A6",fontWeight:"600",scale:"1.2"}} >
                     +20 terrains sportifs
                 </motion.div>
-                <div className={classes.btn}><Button onClick={() => navigate('/terrains')} content="Terrains Sportifs" color="#005326" /></div>
+                <div className={classes.btn}><Button onClick={() => navigate('/terrains')} content="Réservez votre terrain" color="#005326" /></div>
                 
                 
 

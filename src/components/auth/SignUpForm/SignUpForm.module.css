@@ -4,11 +4,13 @@
     align-items: center;
 
 }
-
+.title {
+  margin-top: 0px;
+}
 .signUpForm .header {
     font-size: 30px;
     font-weight: 600;
-    color: #005236;
+    color: #ff8800;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -46,7 +48,7 @@
 }
 
 .signUpForm .note:hover {
-    color: #005236;
+    color: #ff8800;
 }
 .social {
   margin-top: -5px;
