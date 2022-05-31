@@ -6,11 +6,7 @@ import { TextField } from "../TextField";
 export const StepTwo = (props) => {
   return (
     <div className={classes.stepTwo}>
-     
-     <div className={classes.select}>
-      <SelectInput name="profession" form="signup" />
-     </div>
-         
+    
       <TextField placeholder="+216 " label="Numéro de téléphone" name="telephone" type="text"  form="signup" />
         
    

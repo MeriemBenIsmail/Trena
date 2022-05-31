@@ -82,19 +82,19 @@ export const SignUpForm = (props) => {
       {(formik) => (
         <div className={classes.signUpForm}>
          {next!==3 && <div className={classes.header}>
-            <div className={classes.circleContainer}>
-              <Circle color="#6BC4A6" width="26px" height="26px" />
-              <Circle color="#6BC4A6" width="32px" height="32px" />
-              <Circle color="#005236" width="40px" height="40px" />
+         <div className={classes.circleContainer}>
+              <Circle color="#ffc480" width="26px" height="26px" />
+              <Circle color="#ffae52" width="32px" height="32px" />
+              <Circle color="#ff8800" width="40px" height="40px" />
             </div>
-            <h2 className={classes.title}>Inscrivez-Vous</h2>
-            <Line color="#005326" />
+            <h2 className={classes.title} >Inscrivez-Vous</h2>
+            <Line color="#ff8800" />
           </div>}
           <div className={classes.form}>
               {next!==3 && <div className={classes.social}>
                   
                   <SocialMediaBox google={signInWithGoogle} />
-                  <h5 className={classes.note}>Ou</h5>
+               
               </div>}
               
               
@@ -130,7 +130,7 @@ export const SignUpForm = (props) => {
                 <div className={classes.formContent}>
                 <button className={classes.arrowLeft} type="button" onClick={previousHandler}>
                   <svg  viewBox="0 0 50 80" >
-                    <polyline fill="none" stroke="#005236" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+                    <polyline fill="none" stroke="#ff8800" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
                   45.63,75.8 0.375,38.087 45.63,0.375 "/>
                   </svg>  
                 </button>
@@ -139,7 +139,7 @@ export const SignUpForm = (props) => {
                
                 <button className={classes.arrowRight} type="submit">
                   <svg  viewBox="0 0 50 80" >
-                    <polyline fill="none" stroke="#005236" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+                    <polyline fill="none" stroke="#ff8800" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
                   0.375,0.375 45.63,38.087 0.375,75.8 "/>
                   </svg>
                 </button>
