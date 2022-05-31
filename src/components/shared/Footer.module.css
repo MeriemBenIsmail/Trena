@@ -12,10 +12,11 @@
     
 }
 .footerContainer .footer {
-    background: #005236;
+     background: rgba(107, 196, 166, 0.5);;
     padding-top: 90px;
     padding-right: 50px;
     padding-left: 50px;
+    
     
 }
 .footer .logo {

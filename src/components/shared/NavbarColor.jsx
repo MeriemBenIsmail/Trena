@@ -1,17 +1,19 @@
 import React , {useState} from 'react'
-import classes from './Navbar.module.css';
+import classes from './NavbarColor.module.css';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logoorange.png';
+import logo from '../../assets/logowhite.png';
 import man from '../../assets/man.png'
 import { Menu } from './Menu';
-export const Navbar = ({user,logout,mode}) => {
+import wave from '../../assets/waveNavbar.svg'
+export const NavbarColor = ({user,logout}) => {
 
 
     const [menuIsOpen, setMenuIsOpen] = useState(false);
 
     
   return (
-    <div className={classes.nav}>
+    <div className={classes.navbarContainer}>
+        <div className={classes.nav}>
         <Link to='/home' className={classes.logo}>
             <img src={logo} alt="" />
         </Link>
@@ -43,6 +45,10 @@ export const Navbar = ({user,logout,mode}) => {
         </div>
         }
 
+        </div>
+        <img src={wave} className={classes.wave} alt="" />
+
     </div>
+    
   )
 }
