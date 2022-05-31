@@ -3,11 +3,11 @@ import { Navbar } from '../shared/Navbar';
 import StepLine from './StepLine';
 import classes from './Steps.module.css';
 
-const Steps = () => {
+const Steps = ({user,logout}) => {
   return (
     <div className={classes.stepWrapper}>
         <div className={classes.navbar}>
-          <Navbar />
+          <Navbar user={user} logout={logout} />
 
         </div>
         <div className={classes.stepContainer}>
