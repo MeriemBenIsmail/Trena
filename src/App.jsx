@@ -9,7 +9,9 @@ import { Home }from "./pages/Home"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Terrain } from "./pages/Terrain";
 import { Coach } from "./pages/Coach";
+import { Admin } from "./pages/Admin"
 import SingleTerrain from "./pages/SingleTerrain";
+
 function App() {
   const {loading ,error ,user}= useUserContext();
   return (
@@ -22,6 +24,7 @@ function App() {
         <Route exact path="/profil" element={<Profile></Profile> }/>
         <Route exact path="/terrains" element={<Terrain></Terrain> }/>
         <Route exact path="/coachs" element={<Coach></Coach> }/>
+        <Route exact path="/admin" element={<Admin></Admin> }/>
         <Route exact path="/terrains/:id" element={<SingleTerrain></SingleTerrain>} />
       </Routes>
     </Router>
