@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/logowhite.png';
 import man from '../../assets/man.png'
 import { Menu } from './Menu';
-export const Navbar = ({user,logout}) => {
+export const Navbar = ({user,logout,mode}) => {
 
 
     const [menuIsOpen, setMenuIsOpen] = useState(false);
