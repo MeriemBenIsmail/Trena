@@ -28,18 +28,7 @@ export const Sidebar = ({active,setActive}) => {
              <Sideitem icon="carbon:order-details" color="#6BC4A6" colorback="#fff" />
          }
          </div>
-     <div onClick={()=>{setActive(3)}} >
-         {
-             active === 3 ? <Sideitem icon="fluent:people-team-add-20-filled" color="#fff" colorback="#6BC4A6" /> :
-             <Sideitem icon="fluent:people-team-add-20-filled" color="#6BC4A6" colorback="#fff" />
-         }
-    </div>
-    <div onClick={()=>{setActive(4)}} >
-         {
-             active === 4 ? <Sideitem icon="healthicons:ui-preferences" color="#fff" colorback="#6BC4A6" /> :
-             <Sideitem icon="healthicons:ui-preferences" color="#6BC4A6" colorback="#fff" />
-         }
-    </div>
+    
    
     </div>
   )
