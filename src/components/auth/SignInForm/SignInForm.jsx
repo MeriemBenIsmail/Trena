@@ -57,9 +57,9 @@ export const SignInForm = (props) => {
         <div className={classes.signInForm}>
           <div className={classes.header}>
             <div className={classes.circleContainer}>
-              <Circle color="#6BC4A6" width="26px" height="26px" />
-              <Circle color="#6BC4A6" width="32px" height="32px" />
-              <Circle color="#005236" width="40px" height="40px" />
+              <Circle color="#ffc480" width="26px" height="26px" />
+              <Circle color="#ffae52" width="32px" height="32px" />
+              <Circle color="#ff8800" width="40px" height="40px" />
             </div>
             
             <h2 className={classes.title}>Connectez-Vous</h2>

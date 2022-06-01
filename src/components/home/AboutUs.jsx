@@ -106,9 +106,9 @@ export const AboutUs = () => {
 
                 </div>
                 <div ref={ref} className={classes.cards}>
-                    <motion.div animate={animation}  style={{marginLeft: "80px"}}><Card title="Terrains" content="Lore lorem lorem lorem" num="1" /></motion.div>
-                    <motion.div variants={variants2} animate={animation}  style={{marginLeft: "20px"}}><Card title="Coachs" content="Lore lorem lorem lorem" num="2" /></motion.div>
-                    <motion.div variants={variants3} animate={animation}  style={{marginLeft: "80px"}}><Card title="Equipes" content="Lore lorem lorem lorem" num="3" /></motion.div>
+                    <motion.div animate={animation}  style={{marginLeft: "80px"}}><Card title="Terrains" content="Avez-vous déjà annuler votre partie faute de terrain?" num="1" /></motion.div>
+                    <motion.div variants={variants2} animate={animation}  style={{marginLeft: "20px"}}><Card title="Coachs" content="Avez-vous besoin d'un coaching privé?" num="2" /></motion.div>
+                 
 
                 </div>
             </div>
@@ -117,8 +117,8 @@ export const AboutUs = () => {
                         <img src={logo} alt="" />
                     </div>
                 <p>Plateforme Web Tunisienne</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, modi.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, delectus?</p>
+                <p>Met à votre disposition plusieurs terrains à rééserver, des coachs à contacter. </p>
+                <p>Vous permet de pratiquez votre sport préféré avec le moindre effort !</p>
                 <div className={classes.counter}>
                     <motion.div variants={countervariants} initial="hidden" animate="animate" className={classes.stat}>
                         <h2>+20</h2>

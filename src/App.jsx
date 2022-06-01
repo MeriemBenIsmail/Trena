@@ -27,7 +27,11 @@ function App() {
         <Route exact path="/coachs" element={<Coach></Coach> }/>
         <Route exact path="/admin" element={<Admin></Admin> }/>
         <Route exact path="/terrains/:id" element={<SingleTerrain></SingleTerrain>} />
+
         <Route exact path="/adminProfile" element={<AdminProfile></AdminProfile>}/>
+
+        <Route exact path="/coachs/:id" element={<></SingleTerrain>} />
+
       </Routes>
     </Router>
    
