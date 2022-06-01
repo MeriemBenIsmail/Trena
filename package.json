@@ -23,6 +23,8 @@
     "react-intersection-observer": "^9.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
+    "material-table": "^1.69.3",
+    "@material-ui/icons": "^4.11.3",
     "swiper": "^6.8.4",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"

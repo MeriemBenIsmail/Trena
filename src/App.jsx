@@ -11,6 +11,7 @@ import { Terrain } from "./pages/Terrain";
 import { Coach } from "./pages/Coach";
 import { Admin } from "./pages/Admin"
 import SingleTerrain from "./pages/SingleTerrain";
+import  {AdminProfile}  from "./pages/AdminProfile";
 
 function App() {
   const {loading ,error ,user}= useUserContext();
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/coachs" element={<Coach></Coach> }/>
         <Route exact path="/admin" element={<Admin></Admin> }/>
         <Route exact path="/terrains/:id" element={<SingleTerrain></SingleTerrain>} />
+        <Route exact path="/adminProfile" element={<AdminProfile></AdminProfile>}/>
       </Routes>
     </Router>
    

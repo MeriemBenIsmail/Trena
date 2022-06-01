@@ -13,6 +13,7 @@ export const SignInForm = (props) => {
   
   const navigate = useNavigate();
   const [email,setEmail]= useState('');
+  const [admin,setAdmin]= useState(true);
   const {signInWithGoogle,forgotPassword,signInUser,errorLogin, signInWithFacebook} = useUserContext();
   const forgotPasswordHandler = () => {
     if(email) {
@@ -44,8 +45,10 @@ export const SignInForm = (props) => {
        {
         props.onSubmitForm()
         setTimeout(() => {
-          navigate("/home");
-        }, 2500);
+          navigate("/adminProfile");
+        }, 1500);
+       }else{
+        setAdmin(false);
        }
       
     
@@ -74,7 +77,7 @@ export const SignInForm = (props) => {
                 
               </div>
 
-              {errorLogin && <div className={classes.signinerror}>
+              {! admin && <div className={classes.signinerror}>
                   Ce Compte n'existe pas.Veuillez reessayer
               </div>}
               
