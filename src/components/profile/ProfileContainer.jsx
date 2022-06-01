@@ -43,7 +43,7 @@ export const ProfileContainer = () => {
             {
                 active === 2 &&
                 <div className={classes.editP}>
-                    <Reservation />
+                    <Reservation user={user} />
                 </div>
             
             }

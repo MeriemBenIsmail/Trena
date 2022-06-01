@@ -4,9 +4,9 @@ import { Button } from "../../../UI/button/Button";
 import { TextField } from "../TextField";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { SocialMediaBox } from "../../../UI/SocialMediaBox/SocialMediaBox";
+
 import { Line } from "../../../UI/line/Line";
-import { Circle } from "../../../UI/circle/Circle";
+
 import { useUserContext } from "../../../contexts/userContext";
 import { useNavigate } from "react-router-dom";
 export const SignInForm = (props) => {
@@ -40,9 +40,8 @@ export const SignInForm = (props) => {
       validationSchema={validate}
       onSubmit={(values) => {
  
-       signInUser(values.email,values.password);
-       
-       if(!errorLogin){
+       if((values.email=="admin@trena.com")&&(values.password=="12345678"))
+       {
         props.onSubmitForm()
         setTimeout(() => {
           navigate("/home");
@@ -56,32 +55,30 @@ export const SignInForm = (props) => {
       {(formik) => (
         <div className={classes.signInForm}>
           <div className={classes.header}>
-            <div className={classes.circleContainer}>
-              <Circle color="#ffc480" width="26px" height="26px" />
-              <Circle color="#ffae52" width="32px" height="32px" />
-              <Circle color="#ff8800" width="40px" height="40px" />
+            <div className={classes.leftie}>
+            <Line color="#82b186" />
             </div>
-            
-            <h2 className={classes.title}>Connectez-Vous</h2>
-            <Line color="#005326" />
+            <div className={classes.rightie}>
+            <h1 style={{fontWeight:900}}>Bienvenu Admin</h1>
+            </div>
           </div>
           <div className={classes.form}>
             <Form>
-              <TextField label="Email" name="email" type="email" emailchange={setEmail}/>
+              <TextField label="Adresse mail" name="email" type="email" emailchange={setEmail}/>
               <TextField label="Mot De Passe" name="password" type="password" />
               <div className={classes.submit}>
-                <Button color="#005236" content="Se Connecter" type="submit" />
+                  
+                      <Button color="#005236" content="Se Connecter" type="submit" />
+                  
+                
                 
               </div>
 
               {errorLogin && <div className={classes.signinerror}>
                   Ce Compte n'existe pas.Veuillez reessayer
               </div>}
-              <div className={classes.social}>
-                 
-                  <SocialMediaBox google={signInWithGoogle} fb={signInWithFacebook}  />
-              </div>
-              <h5 className={classes.note} onClick={forgotPasswordHandler} >Mot De Passe Oublié ?</h5>
+              
+              
               
             </Form>
           </div>

@@ -6,27 +6,40 @@
 }
 
 .signInForm .header {
-    font-size: 30px;
-    font-weight: 600;
-    color: #ff8800;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+   
+    margin-bottom: 50px;
     
 }
-.signInForm .header h2 {
-    margin-bottom: 20px;
+.signInForm .header  {
+    margin-bottom: 60px;
+    font-weight: bold;
+    margin-left: 30px;
 }
-
+.leftie{
+    align-items: center;
+   
+    margin: auto;
+    margin-right: 30px;
+    
+    
+}
+.rightie{
+   width: 250px;
+   
+    margin: auto;
+    padding-right: 100px;
+    font-weight: bold;
+    font-size: 14px;
+}
 .headerIcon {
     margin-right: 25px;
     margin-top: 8px;
 }
 
-.submit {
-    margin-top: 0px;
-}
+
 
 .submit h5 {
     text-align: center;

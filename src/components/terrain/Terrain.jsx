@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './Terrain.module.css';
 import { Line } from '../../UI/line/Line';
 import { Button } from '../../UI/button/Button';
 import img from '../../assets/terrains/1.jpg'
+import Reservation from './Reservation';
 const Terrain = ({id,title,description,surface,type,address,reservation}) => {
  
     let date = new Date();
     let month = date.getMonth()+1
     date = date.getFullYear() +'-' +month  + '-' + date.getDate();
+    const [reservationIsOpen,setReservationIsOpen] = useState(false);
 
     return (
     <div className={classes.terrainContainer}>
@@ -17,11 +19,17 @@ const Terrain = ({id,title,description,surface,type,address,reservation}) => {
             </div>
             <div className={classes.content}>
                 <div className={classes.left}>
-
                     <img src={img} alt="image" />
-                    <div className={classes.btn}>
-                        <Button content="Réserver" color="#005236" />
-                    </div>
+                    {
+                        reservationIsOpen ? 
+                        <Reservation terrainID={id} reservationTable={reservation}></Reservation> :
+                        <div className={classes.btn}>
+                            <Button content="Réserver" color="#005236" onClick={() => setReservationIsOpen(true)}/>
+                        </div>
+
+                    }
+                    
+                   
                     
                 </div>
                 <div className={classes.right}>

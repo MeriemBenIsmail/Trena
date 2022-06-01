@@ -99,7 +99,7 @@ const Catalogue = () => {
                     {
                         terrains.map((terrain,index) => (
                             <div key={index} className={classes.terrainCard}>
-                                <TerrainCardCatalogue image={process.env.PUBLIC_URL + `/terrains/terrain${index+1}.jpg`} id={terrain._id} title={terrain.title} address={terrain.address} surface={terrain.surface} description={terrain.description} />
+                                <TerrainCardCatalogue image={process.env.PUBLIC_URL + `/terrains/terrain${index+1}.jpg`} id={terrain.id} title={terrain.title} address={terrain.address} surface={terrain.surface} description={terrain.description} />
 
                             </div>
                         ))
