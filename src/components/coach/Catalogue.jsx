@@ -11,10 +11,10 @@ const Catalogue = () => {
    
 
     const [coachs,setCoachs]=useState([]);
-    const [region,setRegion] = useState(null)
+    
     const [checked, setChecked] = useState([]);
     //minsurface , max surface
-    const [surfaceRange,setSurfaceRange] = useState([0,100]);
+    
   
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const Catalogue = () => {
     },[]);
    
     console.log(coachs)
-    console.log(checked)
+  
     return (
         <div className={classes.catalogueContainer}>
             <div className={classes.title}>
@@ -45,7 +45,7 @@ const Catalogue = () => {
                     {
                         coachs.map((coach,index) => (
                             <div key={index} className={classes.terrainCard}>
-                                <CoachCat image={process.env.PUBLIC_URL + `/coachs/coach${index+1}.jpg`} id={coach._id} prenom={coach.prenom} nom={coach.nom} sport={coach.type} informations={coach.description} contact={coach.contact} />
+                                <CoachCat image={process.env.PUBLIC_URL + `/coachs/coach${index+1}.jpg`} id={coach._id} prenom={coach.prenom} nom={coach.nom} type={coach.type} description={coach.description} contact={coach.contact} />
 
                             </div>
                         ))
