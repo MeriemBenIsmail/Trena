@@ -9,7 +9,9 @@ export const Terrain = () => {
   return (
     <div>
         
+
         <Steps user={user} logout={logoutUser} />
+
         <Catalogue />
     </div>
   )

@@ -7,6 +7,7 @@ const Steps = ({user,logout}) => {
   return (
     <div className={classes.stepWrapper}>
         <div className={classes.navbar}>
+
           <Navbar user={user} logout={logout} />
 
         </div>

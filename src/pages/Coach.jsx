@@ -1,9 +1,14 @@
 import React from 'react'
+import { Navbar } from '../components/shared/Navbar'
+import Steps from '../components/coach/Steps'
+import Catalogue from '../components/coach/Catalogue'
 
 export const Coach = () => {
   return (
     <div>
-        hello this is coach page
+        
+        <Steps />
+        <Catalogue />
     </div>
   )
 }
