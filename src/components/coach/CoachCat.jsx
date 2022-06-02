@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './CoachCat.module.css'
 import { Button } from '../../UI/button/Button';
 import { useNavigate } from 'react-router-dom';
-const CoachCat = ({id,title,type,description,image}) => {
+const CoachCat = ({id,nom,prenom,type,description,contact,image}) => {
     
     const navigate = useNavigate();
     return (
@@ -11,13 +11,14 @@ const CoachCat = ({id,title,type,description,image}) => {
             <img src={image} alt="" />
         </div>
         <div className={classes.content}>
-            <h3>{title}</h3>
+            <h3>{nom+" "+prenom}</h3>
          
             <h4>Sport:{" "+type}</h4>
-            <p>{description+"[...]"}</p>
+            <p>{description}</p>
+            <p>Contact : {contact}</p>
         </div>
         <div className={classes.detailBtn}>
-            <Button content="Détails" color="#005236" onClick={() => navigate(`/terrains/${id}`)} />
+            <Button content="Détails" color="#005236" onClick={() => navigate(`/coachs/${id}`)} />
         </div>
 
 
