@@ -13,7 +13,22 @@
     
 
 }
+.headers {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    gap: 20px;
+    color: #6BC4A6;
+}
+.content {
+    display: flex;
+    flex-direction: column;
 
+}
+.content .line {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    gap: 20px;
+}
 .container{
     width: 54vw;
     height: 100vh;

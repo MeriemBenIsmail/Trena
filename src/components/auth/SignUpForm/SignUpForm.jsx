@@ -105,14 +105,14 @@ export const SignUpForm = (props) => {
                     <div className={classes.formContent}>
                       <button className={classes.arrowLeft} onClick={previousHandler} disabled type="button">
                       <svg viewBox="0 0 50 80" >
-                        <polyline fill="none" stroke="#005236" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
+                        <polyline fill="none" stroke="#ff8800" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
                       45.63,75.8 0.375,38.087 45.63,0.375 "/>
                       </svg>  
                       </button>
                       <StepOne errorSignUp={errorSignUp} />
                       <button className={classes.arrowRight} type="submit">
                         <svg  viewBox="0 0 50 80" >
-                          <polyline fill="none" stroke="#005236" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
+                          <polyline fill="none" stroke="#ff8800" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="
                         0.375,0.375 45.63,38.087 0.375,75.8 "/>
                         </svg>
                       </button>

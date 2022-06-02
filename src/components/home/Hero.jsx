@@ -23,6 +23,7 @@ export const Hero = ({user,logout}) => {
 
         }
     }
+    console.log(user)
   return (
     <div className={classes.hero}>
         <Navbar user={user} logout={logout} />

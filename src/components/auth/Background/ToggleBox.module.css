@@ -1,7 +1,7 @@
 .toggleBox {
     width: 60px;
     height: 30px;
-    background: #005236;
+    background: #ff8800;
     box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     display: flex;
