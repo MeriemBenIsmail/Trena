@@ -19,79 +19,14 @@ export const Coach = () => {
         <div className={classes.coachWrapper}>
           <div className={classes.wrapper}>
             <div className={classes.outer}>
-                  {/* <div className={classes.card} style={{animationDelay:`-3s`} }>
-                      <div className={classes.content}>
-                        <div className={classes.img}>
-                            <img src={process.env.PUBLIC_URL + `/coachs/coach1.png`} alt="" />
-                        </div>
-                        <div className={classes.details}>
-                          
-                            <span className={classes.name}>coach1</span>
-                            <span className={classes.name}>coach1</span>
-                            <p>coach football</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className={classes.card} style={{animationDelay:`0s`} }>
-                      <div className={classes.content}>
-                        <div className={classes.img}>
-                            <img src={process.env.PUBLIC_URL + `/coachs/coach2.png`} alt="" />
-                        </div>
-                        <div className={classes.details}>
-                          
-                            <span className={classes.name}>coach2</span>
-                            <span className={classes.name}>coach2</span>
-                            <p>coach football</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className={classes.card} style={{animationDelay:`3s`} }>
-                      <div className={classes.content}>
-                        <div className={classes.img}>
-                            <img src={process.env.PUBLIC_URL + `/coachs/coach3.png`} alt="" />
-                        </div>
-                        <div className={classes.details}>
-                          
-                            <span className={classes.name}>coach3</span>
-                            <span className={classes.name}>coach3</span>
-                            <p>coach football</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className={classes.card} style={{animationDelay:`6s`} }>
-                      <div className={classes.content}>
-                        <div className={classes.img}>
-                            <img src={process.env.PUBLIC_URL + `/coachs/coach4.png`} alt="" />
-                        </div>
-                        <div className={classes.details}>
-                          
-                            <span className={classes.name}>coach4</span>
-                            <span className={classes.name}>coach4</span>
-                            <p>coach football</p>
-                        </div>
-                      </div>
-                    </div>
-            
-                    <div className={classes.card} style={{animationDelay:`9s`} }>
-                      <div className={classes.content}>
-                        <div className={classes.img}>
-                            <img src={process.env.PUBLIC_URL + `/coachs/coach5.png`} alt="" />
-                        </div>
-                        <div className={classes.details}>
-                          
-                            <span className={classes.name}>coach5</span>
-                            <span className={classes.name}>coach5</span>
-                            <p>coach football</p>
-                        </div>
-                      </div>
-                    </div>*/}
+                 
                     
                     
                     
                     
                     
                 {
-                  coachs[0].map((coach) => (
+                  coachs.map((coach) => (
                     
                     
                     <div key={coach.id} className={classes.card} style={{animationDelay:`calc(3s*${animationDelay(coach.id)})`}}>
@@ -113,8 +48,8 @@ export const Coach = () => {
             </div>
           </div>
           <div className={classes.intro}>
-            <h2 className={classes.title}>Coach Coach</h2>
-            <h4 className={classes.desc}>Lorem ipsum, dolor sit amet consectetur psum, dolor sit amet consectetur ad psum, dolor sit amet consectetur ad psum, dolor sit amet consectetur ad adipisicing elit. Fugit, fuga.</h4>
+            <h2 className={classes.title}>Entraîneurs Sportifs</h2>
+            <h4 className={classes.desc}>Le Personal Training consiste en l’accompagnement sur mesure d’une personne dans une démarche de changement physique et mental, à un moment clé de sa vie, à partir des besoins qu’elle exprime. Notre site vous offre une liste variée d'entraineurs personnels contenant leurs contacts et leurs descriptions pour vous faciliter la recherche !</h4>
           </div>
         </div>
     </div>

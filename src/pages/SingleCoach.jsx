@@ -6,43 +6,37 @@ import Footer from '../components/shared/Footer';
 import { NavbarColor } from '../components/shared/NavbarColor';
 
 import { useUserContext } from "../contexts/userContext";
+import Coach from '../components/coach/Coach';
 
-const SingleTerrain = () => {
+const SingleCoach = () => {
   
     const { user, logoutUser } = useUserContext();
     const { id } = useParams();
-    const [terrain,setTerrain]=useState({});
-    const [reservation,setReservation] = useState([]);
+    const [coach,setCoach]=useState({});
+    
     useEffect(() => {
             
-        Axios.get("http://localhost:3000/terrains/"+id).then( (response) => {
+        Axios.get("http://localhost:3000/coachs/"+id).then( (response) => {
 
-               setTerrain(response.data);
+               setCoach(response.data);
                
        })
        .catch((error) => {
            console.error(error);
        });
-       Axios.get("http://localhost:3000/reservations?terrain="+id).then( (response) => {
-
-               setReservation(response.data);
-               
-       })
-       .catch((error) => {
-           console.error(error);
-       });
+      
 
 },[]);
-//console.log(terrain)
+
     return (
     <div>
 
         <NavbarColor user={user} logout={logoutUser}></NavbarColor>
 
-        <Terrain image={process.env.PUBLIC_URL + `/terrains/terrain${id}.jpg`} id={terrain.id} address={terrain.address} title={terrain.title} description={terrain.description} surface={terrain.surface} type={terrain.type} reservation={reservation} />
+        <Coach image={process.env.PUBLIC_URL + `/coachs/coach${id}.jpg`} id={coach.id} nom={coach.nom} prenom={coach.prenom} type={coach.type} contact={coach.contact} description={coach.description}  />
         <Footer />
     </div>
   )
 }
 
-export default SingleTerrain
+export default SingleCoach

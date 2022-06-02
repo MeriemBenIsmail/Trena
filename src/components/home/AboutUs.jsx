@@ -6,6 +6,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { Circle } from '../../UI/circle/Circle';
 import logo from '../../assets/logoorange.png';
 import { useInView } from 'react-intersection-observer';
+import CountUp from 'react-countup';
 export const AboutUs = () => {
     const variants1 = {
         hidden:{
@@ -121,15 +122,15 @@ export const AboutUs = () => {
                 <p>Vous permet de pratiquez votre sport préféré avec le moindre effort !</p>
                 <div className={classes.counter}>
                     <motion.div variants={countervariants} initial="hidden" animate="animate" className={classes.stat}>
-                        <h2>+20</h2>
+                        <h2>+<CountUp end={20} /></h2>
                         <p>Terrains Sportifs</p>
                     </motion.div>
                     <motion.div variants={countervariants} initial="hidden" animate="animate" className={classes.stat}>
-                        <h2>+10</h2>
+                        <h2>+<CountUp end={10} /></h2>
                         <p>Coachs Personnels</p>
                     </motion.div>
                     <motion.div variants={countervariants} initial="hidden" animate="animate" className={classes.stat}>
-                        <h2>+5</h2>
+                        <h2>+<CountUp end={5} /></h2>
                         <p>Sports Pratiqués</p>
                     </motion.div>
                 </div>

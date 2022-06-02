@@ -11,6 +11,7 @@ import { Terrain } from "./pages/Terrain";
 import { Coach } from "./pages/Coach";
 import { Admin } from "./pages/Admin"
 import SingleTerrain from "./pages/SingleTerrain";
+import SingleCoach from './pages/SingleCoach'
 import  {AdminProfile}  from "./pages/AdminProfile";
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
 
         <Route exact path="/adminProfile" element={<AdminProfile></AdminProfile>}/>
 
-        <Route exact path="/coachs/:id" element={<></SingleTerrain>} />
+        <Route exact path="/coachs/:id" element={<SingleCoach></SingleCoach>} />
 
       </Routes>
     </Router>

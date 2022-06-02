@@ -1,7 +1,7 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    color: rgb(8, 83, 1);
+    color: #fff;
     padding: 20px;
     align-items: center;
 }
@@ -21,8 +21,9 @@
 }
 .nav .navlinks li .link , .nav .connection li .link {
     text-decoration: none;
-    color: rgb(8, 83, 1);
+    color: #FE982A;
     transition: 0.3s ease-in-out;
+    font-weight: 600;
 }
 .nav .navlinks li .link:hover , .nav .connection li .link:hover  {
     color: #005236;

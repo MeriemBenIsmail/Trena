@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './CoachCat.module.css'
 import { Button } from '../../UI/button/Button';
 import { useNavigate } from 'react-router-dom';
-const CoachCat = ({id,nom,prenom,type,description,contact,image}) => {
+const CoachCat = ({index,id,nom,prenom,type,description,contact,image}) => {
     
     const navigate = useNavigate();
     return (

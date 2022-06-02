@@ -31,7 +31,7 @@ export const NavbarColor = ({user,logout}) => {
         
         <div className={classes.userInfo}>
             <div className={classes.user}>
-                <span className={classes.gradient} >Bienvenu, {user.email}</span> 
+                <span >Bienvenu, {user.email.split('@')[0]}</span> 
                 <img onClick={() => {setMenuIsOpen(!menuIsOpen)}}  src={man} alt="" />
             </div>
             {

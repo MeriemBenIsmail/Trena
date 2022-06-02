@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Button } from '../../UI/button/Button';
 import logo from '../../assets/logoorange.png'
 import { useNavigate } from 'react-router-dom';
+import CountUp from 'react-countup';
 export const Hero = ({user,logout}) => {
 
     const navigate = useNavigate();
@@ -29,12 +30,20 @@ export const Hero = ({user,logout}) => {
         <Navbar user={user} logout={logout} />
         <div className={classes.intro}>
             <div className={classes.parags}>
-                <motion.div className={classes.first} >
+                <div className={classes.first}>
+                    <div className={classes.firstWord}>Avec la plateforme </div>
+                    <div className={classes.saveRest}>
+                        <div className={classes.logo}>
+                            <img src={logo} alt="" />
+                        </div>
+                    </div>
+                </div>
+              {  /*<motion.div className={classes.first} >
                      Avec la plateforme web 
                      <div className={classes.logo}>
                         <img src={logo} alt="" />
                     </div>
-                </motion.div>
+  </motion.div>*/}
                 <br />
                 <motion.div >
                 On vous offre la chance de pratiquer vos sports préférés.
@@ -43,8 +52,8 @@ export const Hero = ({user,logout}) => {
                 <motion.div >
                      On met à votre disposition
                 </motion.div>
-                <motion.div className={classes.gradient} style={{color:" #6BC4A6",fontWeight:"600",scale:"1.2"}} >
-                    +20 terrains sportifs
+                <motion.div className={classes.gradient} style={{color:" #6BC4A6",fontWeight:"600",scale:"1.4"}} >
+                    +<CountUp end={20} /> terrains sportifs
                 </motion.div>
                 <div className={classes.btn}><Button onClick={() => navigate('/terrains')} content="Réservez votre terrain" color="#005326" /></div>
                 

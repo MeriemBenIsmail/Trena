@@ -3,19 +3,19 @@ import classes from './Coach.module.css';
 import { Line } from '../../UI/line/Line';
 import { Button } from '../../UI/button/Button';
 import img from '../../assets/terrains/1.jpg'
-const Coach = ({id,nom,prenom,description,sport,contact}) => {
+const Coach = ({id,nom,prenom,description,type,contact,image}) => {
  
    
     return (
     <div className={classes.terrainContainer}>
             <div className={classes.title}>
                 <Line color="#6BC4A6" />
-                <h2>{title}</h2>
+                <h2>{nom+" "+prenom}</h2>
             </div>
             <div className={classes.content}>
                 <div className={classes.left}>
 
-                    <img src={img} alt="image" />
+                    <img src={process.env.PUBLIC_URL + `/coachs/coach${id}.jpg`} alt="image" />
                     
                     
                 </div>

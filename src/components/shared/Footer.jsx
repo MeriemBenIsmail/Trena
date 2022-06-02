@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './Footer.module.css';
 import logo from '../../assets/logowhite.png'
 import wave from '../../assets/wavefooter.png'
+import { Button } from '../../UI/button/Button';
 const Footer = () => {
   return (
     <div className={classes.footerContainer}>
@@ -14,10 +15,10 @@ const Footer = () => {
         </div>
         <div className={classes.details}>
           <p className={classes.parag}>
-            Lorem ipsum dolor sit amet 
-            consectetur adipisicing elit.
-            Lorem ipsum dolor sit amet 
-            consectetur adipisicing elit.
+          Avec la plateforme TRENA
+
+
+          On vous offre la chance de pratiquer vos sports préférés tout en facilitant la réservation des terrains
           </p>
           <div className={classes.general}>
             <div className={classes.infos}>
@@ -35,9 +36,8 @@ const Footer = () => {
                   fb
                   insta
                 </li>
-                <li>
-                  mail
-                  contact
+                <li style={{pointerEvents:"none"}}>
+                 <Button content="contact@trena.com" color="#FE982A" ></Button>
                 </li>
               </ul>
             </div>

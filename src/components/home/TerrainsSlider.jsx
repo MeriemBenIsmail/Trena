@@ -12,6 +12,7 @@ import img1 from '../../assets/terrains/1.jpg'
 import { Button } from '../../UI/button/Button';
 import Popup from '../../UI/popup/Popup';
 import { useNavigate } from 'react-router-dom';
+import Axios from 'axios';
 
 
 export const TerrainsSlider = () => {

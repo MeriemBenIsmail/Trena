@@ -38,8 +38,10 @@
     grid-gap:50px;
 }
 .details .general {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: start;
+   
 }
 .general .parag {
     text-align: center;

@@ -45,7 +45,7 @@ const Catalogue = () => {
                     {
                         coachs.map((coach,index) => (
                             <div key={index} className={classes.terrainCard}>
-                                <CoachCat image={process.env.PUBLIC_URL + `/coachs/coach${index+1}.jpg`} id={coach._id} prenom={coach.prenom} nom={coach.nom} type={coach.type} description={coach.description} contact={coach.contact} />
+                                <CoachCat index={index} image={process.env.PUBLIC_URL + `/coachs/coach${coach.id}.jpg`} id={coach.id} prenom={coach.prenom} nom={coach.nom} type={coach.type} description={coach.description} contact={coach.contact} />
 
                             </div>
                         ))

@@ -19,7 +19,7 @@ const Terrain = ({id,title,description,surface,type,address,reservation}) => {
             </div>
             <div className={classes.content}>
                 <div className={classes.left}>
-                    <img src={img} alt="image" />
+                    <img src={process.env.PUBLIC_URL + `/terrains/terrain${id}.jpg`} alt="image" />
                     {
                         reservationIsOpen ? 
                         <Reservation terrainID={id} reservationTable={reservation}></Reservation> :

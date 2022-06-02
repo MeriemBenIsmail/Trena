@@ -3,11 +3,11 @@ import { NavbarColored } from '../shared/NavbarColored';
 
 import classes from './Steps.module.css';
 
-const Steps = () => {
+const Steps = ({user,logout}) => {
   return (
     <div className={classes.stepWrapper}>
         <div className={classes.navbar}>
-          <NavbarColored />
+          <NavbarColored user={user} logout={logout} />
 
         </div>
 

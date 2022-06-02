@@ -63,14 +63,14 @@ export const SignInForm = (props) => {
             </div>
             
             <h2 className={classes.title}>Connectez-Vous</h2>
-            <Line color="#005326" />
+            <Line color="#ff8800" />
           </div>
           <div className={classes.form}>
             <Form>
               <TextField label="Email" name="email" type="email" emailchange={setEmail}/>
               <TextField label="Mot De Passe" name="password" type="password" />
               <div className={classes.submit}>
-                <Button color="#005236" content="Se Connecter" type="submit" />
+                <Button color="#ff8800" content="Se Connecter" type="submit" />
                 
               </div>
 
