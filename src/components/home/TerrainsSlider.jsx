@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import classes from './TerrainsSlider.module.css';
 import { Line } from '../../UI/line/Line';
 import terrains from '../../common/data/Terrains.json';
@@ -18,10 +18,21 @@ import Axios from 'axios';
 export const TerrainsSlider = () => {
 
     SwiperCore.use([EffectCoverflow, Pagination,Autoplay])
-
+//const [terrains,setTerrains] = useState([])
     const [modalIsOpen,setModalIsOpen] = useState(false);
     const navigate = useNavigate();
-    
+    useEffect(() => {
+            
+        Axios.get("http://localhost:3000/terrains").then( (response) => {
+
+               setTerrains(response.data);
+               
+       })
+       .catch((error) => {
+           console.error(error);
+       });
+
+},[]);
   return (
     <div className={classes.terrainWrapper}>
          <div className={classes.title}>

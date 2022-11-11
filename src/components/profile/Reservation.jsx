@@ -3,6 +3,7 @@ import style from './Reservation.module.css';
 import Axios from 'axios'
 export const Reservation = ({user}) => {
   const [reservations,setReservations] = useState([]);
+  const [terrain,setTerrains] = useState([])
 console.log(user.email)
   useEffect(() => {
             
@@ -14,6 +15,7 @@ console.log(user.email)
    .catch((error) => {
        console.error(error);
    });
+  
 
 },[]);
   return (

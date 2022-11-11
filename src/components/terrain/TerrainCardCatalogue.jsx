@@ -13,7 +13,7 @@ const TerrainCardCatalogue = ({id,title,address,type,surface,description,image})
         <div className={classes.content}>
             <h3>{title}</h3>
             <h4>{address}</h4>
-            <h4>Surface:{" "+surface+" m²"}</h4>
+            <h4>Surface:{" "+surface*100+" m²"}</h4>
             <p>{description+"[...]"}</p>
         </div>
         <div className={classes.detailBtn}>

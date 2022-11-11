@@ -11,16 +11,23 @@ import { Preferences } from './Preferences';
 import { Divider } from '../../UI/divider/Divider';
 import { useUserContext } from '../../contexts/userContext';
 import { ProgressCircle } from '../../UI/progressCircle/ProgressCircle';
+import logo from '../../assets/logoorange.png'
+import { useNavigate } from 'react-router-dom';
 export const ProfileContainer = () => {
-  
+    const navigate = useNavigate()
     const { user, logoutUser } = useUserContext();
     const [active,setActive] = useState(0);
     const [menuIsOpen,setMenuIsOpen] = useState(false);
     
     return (
     <div className={classes.edit}>
+       
         <div className={classes.content}>
-            <div className={classes.side}>
+            
+            <div className={classes.side} style={{display:"flex",cursor:"pointer",flexDirection:"column"}}>
+                <div style={{width:"130px",height:"80px"}} onClick={() => navigate('/home')}>
+                    <img src={logo} alt="" width="100%" height="100%" />
+                </div>
                 <Sidebar active={active} setActive={setActive} />
                 
             </div>

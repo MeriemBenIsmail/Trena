@@ -4,6 +4,7 @@
     color: #fff;
     padding: 20px;
     align-items: center;
+    overflow-x: hidden;
 }
 .nav .logo {
     font-size: max(2em,3em);

@@ -30,7 +30,7 @@ const Catalogue = () => {
     
     },[]);
    
-    console.log(coachs)
+     
   
     return (
         <div className={classes.catalogueContainer}>

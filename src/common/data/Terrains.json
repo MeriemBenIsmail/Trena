@@ -1,13 +1,13 @@
 [
     {
         "id":1,
-        "title":"Terrain de Football",
-        "address":"Jardins El Menzah",
+        "title":"Terrain de Basketball",
+        "address":"Jardins El Menzah, Ariana",
         "surface":100,
-        "type":"foot",
+        "type":"basketball",
         "available":true,
-        "description":"Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem ",
-        "image":"../../assets/6.jpg",
+        "description":"Terrain de Basketball",
+        "image":"trena-frontend/public/terrains/terrain0a844951-3a4e-4263-bf40-57bd773d197d.jpg",
         "review":[1,1,1,0.5,0]
     },
     {
